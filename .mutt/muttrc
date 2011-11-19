@@ -1,0 +1,167 @@
+# ACCOUNTS
+# this is the default folder which will be loaded on startup by default
+set spoolfile=imaps://frugalware.org/
+# unset foo bar does not work, is it a bug?
+account-hook . 'unset imap_user; unset imap_pass; unset tunnel'
+source 'cat ~/.mutt/accounts/*.conf|'
+
+alternates 'vmiklos@(vmiklos.hu|frugalware.org)'
+set reverse_name
+#set use_realname
+#set reverse_reply
+unset reverse_realname
+
+# CHARSET
+set charset="iso-8859-2"
+set send_charset=us-ascii:iso-8859-1:iso-8859-2:utf-8
+
+# HEADERS
+ignore *
+unignore date from to cc subject x-mailer resent-from reply-to message-id user-agent list-archive
+hdr_order date from reply-to to cc resent-from subject message-id user-agent
+
+# MAILING
+# if the client is behind a firewall (it's port 25 is not open) then set this
+set use_envelope_from
+# don't move read messages
+set move=no
+set copy=yes # copy of outgoing messages
+#set attribution="Hello,\n\nNa %d, %f pisal(a):"
+set editor="vim -c 'set tw=72 noautoindent expandtab notitle ft=mail'"
+set autoedit
+set include=yes
+set edit_headers
+set abort_nosubject=yes
+set abort_unmodified=yes
+set mime_forward=ask-no
+set postpone=ask-yes
+set print=ask-yes
+set recall=ask-no
+set reply_to=yes
+set forward_format = "Fwd: [ %s ]"
+set forward_quote = yes
+set header_cache=~/.mutt/header_cache
+set maildir_header_cache_verify=no
+set nomark_old
+set auto_tag
+set hide_limited
+# this will let me receive copies when the other guys do a group reply.
+# it's not a big overhead and the kernel.org lists consider setting a
+# followup_to impolite.
+unset followup_to
+# this will ask if you want to reply off-list or to the list, but the
+# default will be to reply to the list only.
+set list_reply=ask-no
+
+set display_filter="$HOME/.mutt/display-filter.py"
+
+# STYLE
+set sort=threads
+set sort_aux=reverse-last-date
+set menu_scroll
+set pager_context=3
+set delete=yes
+set mask="."
+set index_format = "%4C %Z %{%b %d} %-15.15F (%?l?%4l&%4c?) %s"
+
+# Pager
+set pager_index_lines=9
+
+# mutt-ng settings
+set sidebar_visible="yes"
+set sidebar_width=40
+#set shorten_hierarchy
+color sidebar_new yellow default
+
+bind index \cl limit
+bind index l sidebar-open
+macro index P "<enter-command>unmailboxes `python ~/.mutt/mailboxes.py --big`<enter>"
+macro index L "<enter-command>mailboxes `python ~/.mutt/mailboxes.py --big`<enter>"
+macro index C "T.\n;WN^T.\n" "mark all messages as read"
+
+macro index S "<enter-command>unset wait_key\n\
+<pipe-entry>bogofilter -s;date +%y%m%d >>~/public_html/stats/spam_s\n\
+<enter-command>set wait_key\n\
+<delete-message>"
+macro index H "<enter-command>unset wait_key\n\
+<pipe-entry>bogofilter -n;date +%y%m%d >>~/public_html/stats/spam_s\n\
+<enter-command>set wait_key\n"
+
+bind index F flag-message
+bind pager F flag-message
+bind pager . bottom
+
+#macro index H "c?\t"
+bind index j sidebar-next
+bind index k sidebar-prev
+macro index <f2> "<enter-command>set invsidebar_visible<enter>"
+macro pager <f2> "<enter-command>set invsidebar_visible<enter>"
+
+bind index R recall-message
+bind index E resend-message
+macro index \cf <search>~F<enter>
+set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? %l?]---(%s/%S)-%>-(%P)---"
+
+#macro pager A "<pipe-entry>(umask 022; darcs apply --verbose --repodir ~/darcs/frugalware-current)"
+#macro pager A "<pipe-entry>(umask 022; cd ~/git/; git am)"
+macro pager A "<pipe-entry>ssh janny 'cd ~/git/current; git am'"
+
+set query_command="abook --mutt-query '%s'"
+macro pager T |'abook --add-email'\n
+
+# hilighting shortcuts
+color index brightgreen  default    ~p    # To me (personal)
+color index yellow       default    ~N    # New
+color index yellow       default    ~O    # Old
+
+# redefined all the normal mutt movement keys
+bind  pager   <up>     previous-line
+bind  pager   <down>   next-line
+bind  pager   <left>   exit
+bind  pager   <right>  view-attachments
+bind  attach  <left>   exit
+bind  attach  <right>  view-attach
+bind  index   <right>  display-message
+macro index   <left>   "c?"
+bind  browser <right>  select-entry
+bind  browser <left>   exit
+
+bind index <Right> next-thread
+bind index <Left> previous-thread
+bind index n next-unread
+bind index p previous-new
+
+set alias_file=~/.mutt/aliases
+set nosig_dashes
+auto_view text/html
+
+source ~/.mutt/aliases
+source ~/.mutt/lists
+source ~/.mutt/colors
+
+# NOTIFY
+set nobeep
+set nobeep_new
+set check_new
+set mail_check=15
+set quit=ask-no
+set implicit_autoview
+message-hook . "unalternative_order *; alternative_order text/plain"
+message-hook "~f @vipmail.hu" "unalternative_order *; alternative_order text/html"
+message-hook "~f @freemail.hu" "unalternative_order *; alternative_order text/html"
+message-hook "~f picasaweb-noreply@google.com" "unalternative_order *; alternative_order text/html"
+message-hook "~f @sc.bme.hu" "unalternative_order *; alternative_order text/html"
+
+# PGP
+# source /usr/share/doc/mutt-ng-20060402/samples/gpg.rc
+source ~/.mutt/smime.rc
+source ~/.mutt/gpg.rc
+#set crypt_autosign - will be defined in accounts/*
+unset crypt_autoencrypt
+#set crypt_replysign
+set crypt_replyencrypt
+set crypt_verify_sig=yes
+set pgp_sign_as="0x03915096"
+set pgp_timeout=1800
+set fcc_clear
+set rfc2047_parameters

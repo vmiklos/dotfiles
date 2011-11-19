@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "creating 10frugalware.conf"
+m4 -DPASSWORD="$(sudo ~/bin/cpm --quiet imap.*frugalware.org)" 10frugalware.conf.m4 > 10frugalware.conf
+echo "creating 20ulx.conf"
+m4 -DPASSWORD="$(sudo ~/bin/cpm --quiet imap.*ulx.hu)" 20ulx.conf.m4 > 20ulx.conf
+echo "creating 50sztaki.conf"
+m4 -DPASSWORD="$(sudo ~/bin/cpm --quiet imap.*dsd.sztaki.hu)" 50sztaki.conf.m4 > 50sztaki.conf

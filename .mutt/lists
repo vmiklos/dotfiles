@@ -1,0 +1,19 @@
+subscribe frugalware-forums
+subscribe frugalware-darcs
+subscribe frugalware-git
+subscribe frugalware-devel
+subscribe frugalware-users
+subscribe frugalware-bugs
+subscribe darcs-users@darcs.net
+subscribe pacman-std-devel
+subscribe dsd@dsd.sztaki.hu
+subscribe tailor@lists.zooko.com
+subscribe translate-pootle@lists.sourceforge.net
+subscribe dev@lists.go-oo.org
+subscribe openscope@googlegroups.com
+subscribe git@vger.kernel.org
+subscribe frugalware-i18n@frugalware.org
+subscribe dp-l@iit.bme.hu
+subscribe dp-l@bagira.iit.bme.hu
+subscribe libreoffice@lists.freedesktop.org
+# vim: ft=muttrc
