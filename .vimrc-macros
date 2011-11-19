@@ -1,0 +1,74 @@
+""set encoding=latin2
+set encoding=utf8
+" tab -> 4spaces for ugly projects
+map <F4> <Esc>:set et<CR>:set sw=4<CR>
+map <F5> <Esc>:setlocal spell spelllang=en_gb<CR>
+map <F6> <Esc>:setlocal spell spelllang=hu<CR>
+map <F7> <Esc>:setlocal nospell<CR>
+" handle utf8 files
+""map <F8> :set termencoding=iso8859-2<CR>:set encoding=utf8<CR>
+map <F8> :set termencoding=utf8<CR>:set encoding=latin2<CR>
+" gq should use 72 so that quoted mails are readable on normal terminals
+"set tw=72
+set formatoptions -=t
+au BufNewFile,BufReadPost,BufEnter *.ly so /usr/share/lilypond/2.12.1/vim/syntax/lilypond.vim
+set pastetoggle=<F9>
+
+au BufRead */swig*/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2 | set expandtab " SWIG
+au BufRead */swig*/Source/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2 | set noexpandtab " SWIG Source
+au BufNewFile,BufRead *.i set filetype=swig 
+au BufNewFile,BufRead *.swg set filetype=swig 
+
+map <F11> :% !xmllint --format --recover - 2>/dev/null<CR>
+
+fun AddTodo()
+    " search backwards for our magic regex that works most of the time
+    let flags = "bn"
+    let fNum = search('^\w\+\s\+\w\+.*\n*\s*[(){:].*[,)]*\s*$', flags)
+    " if we're in a python file, search backwards for the most recent def: or
+    " class: declaration
+    if match(expand("%:t"), ".py") != -1
+        let dNum = search('^\s\+def\s*.*:\s*$', flags)
+        let cNum = search('^\s*class\s.*:\s*$', flags)
+        if dNum > cNum
+            let fNum = dNum
+        else
+            let fNum = cNum
+        endif
+    endif
+
+    "paste the matching line into a variable to display
+    let tempstring = getline(fNum)
+    let items = split(tempstring, '(')
+    let items2 = split(items[0], ' ')
+
+    "return the line that we found to be the function name
+    execute "normal a \<BS>". "\nprintf(\"debug, TODO: " . items2[1] . "\\n\");"
+endfun
+
+command Todo call AddTodo()
+
+fun AddTrace()
+    execute "normal a \<BS>". "\nOSL_TRACE(\"TODO: %s\", __PRETTY_FUNCTION__);"
+endfun
+map <F10> :call AddTrace()<CR>
+
+au BufReadCmd *.docx,*.xlsx,*.pptx call zip#Browse(expand("<amatch>"))
+au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt call zip#Browse(expand("<amatch>"))
+"au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+
+" vim -b : edit binary using xxd-format!
+augroup Binary
+	au!
+	au BufReadPre  *.bin let &bin=1
+	au BufReadPost *.bin if &bin | %!xxd
+	au BufReadPost *.bin set ft=xxd | endif
+	au BufWritePre *.bin if &bin | %!xxd -r
+	au BufWritePre *.bin endif
+	au BufWritePost *.bin if &bin | %!xxd
+	au BufWritePost *.bin set nomod | endif
+augroup END
+
+" Tags files are searched first relative to the current file, then relative to
+" the current working directory, and last in the $HOME directory.
+set tags=./tags,./../tags,./../../tags,./../../../tags,./../../../../tags,./../../../../../tags,tags,../tags,.
