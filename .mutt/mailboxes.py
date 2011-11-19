@@ -21,7 +21,10 @@ def usage():
 	sys.exit(1)
 
 basedir = os.path.join(os.environ['HOME'], "Maildir")
-os.chdir(basedir)
+try:
+	os.chdir(basedir)
+except OSError:
+	pass
 
 import config
 
@@ -36,9 +39,12 @@ for i in l:
 hide.sort()
 
 dirs = [""]
-for i in os.listdir(basedir):
-	if stat.S_ISDIR(os.stat(i)[stat.ST_MODE]) and i.startswith(".") and i not in hide:
-		dirs.append(i)
+try:
+	for i in os.listdir(basedir):
+		if stat.S_ISDIR(os.stat(i)[stat.ST_MODE]) and i.startswith(".") and i not in hide:
+			dirs.append(i)
+except OSError:
+	pass
 dirs.sort()
 
 if len(sys.argv) == 1:
