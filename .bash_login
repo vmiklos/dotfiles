@@ -6,3 +6,9 @@ PS1='\u@\h:\w\$ '
 export LS_OPTIONS=$(echo $LS_OPTIONS|sed 's/--color=[^ ]\+/--color=auto/')
 # silence cpm warnings
 alias cpm="sudo ~/bin/cpm"
+
+# F: quit if input is less then one page
+# M: no more-like short prompt
+# R: accept colors
+# X: don't throw away the output after quit under x
+export LESS="FMRX"
