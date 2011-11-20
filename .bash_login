@@ -12,3 +12,7 @@ alias cpm="sudo ~/bin/cpm"
 # R: accept colors
 # X: don't throw away the output after quit under x
 export LESS="FMRX"
+
+# Adds /sbin and /usr/sbin to PATH when sudoing, so you don't have
+# to give full PATH for launching a program in those directories.
+alias sudo="PATH=$PATH:/sbin:/usr/sbin sudo"
