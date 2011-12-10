@@ -12,8 +12,8 @@ set reverse_name
 unset reverse_realname
 
 # CHARSET
-set charset="utf-8"
-set send_charset=utf-8
+set charset="iso-8859-2"
+set send_charset=us-ascii:iso-8859-1:iso-8859-2:utf-8
 
 # HEADERS
 ignore *
@@ -104,7 +104,7 @@ set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del
 
 #macro pager A "<pipe-entry>(umask 022; darcs apply --verbose --repodir ~/darcs/frugalware-current)"
 #macro pager A "<pipe-entry>(umask 022; cd ~/git/; git am)"
-macro pager A "<pipe-entry>cd ~/git/current; git am"
+macro pager A "<pipe-entry>ssh janny 'cd ~/git/current; git am'"
 
 set query_command="abook --mutt-query '%s'"
 macro pager T |'abook --add-email'\n
