@@ -13,6 +13,7 @@ map <F8> :set termencoding=utf8<CR>:set encoding=latin2<CR>
 set formatoptions -=t
 au BufNewFile,BufReadPost,BufEnter *.ly so /usr/share/lilypond/2.12.1/vim/syntax/lilypond.vim
 set pastetoggle=<F9>
+set noshowmatch
 
 au BufRead */swig*/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2 | set expandtab " SWIG
 au BufRead */swig*/Source/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2 | set noexpandtab " SWIG Source
