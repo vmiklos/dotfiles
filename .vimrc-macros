@@ -73,3 +73,5 @@ augroup END
 " Tags files are searched first relative to the current file, then relative to
 " the current working directory, and last in the $HOME directory.
 set tags=./tags,./../tags,./../../tags,./../../../tags,./../../../../tags,./../../../../../tags,tags,../tags,.
+
+source $VIMRUNTIME/macros/matchit.vim
