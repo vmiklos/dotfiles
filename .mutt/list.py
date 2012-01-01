@@ -42,9 +42,6 @@ class ImapLister:
 			return False
 		if folder.strip('"') in config.ignore[server]:
 			return True
-		# HACK
-		elif folder.strip('"').startswith("INBOX.People"):
-			return True
 		else:
 			return False
 
