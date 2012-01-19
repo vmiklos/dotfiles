@@ -57,6 +57,7 @@ map <F10> :call AddTrace()<CR>
 
 au BufReadCmd *.docx,*.xlsx,*.pptx call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt call zip#Browse(expand("<amatch>"))
+au BufReadCmd *.sxw call zip#Browse(expand("<amatch>"))
 "au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 " vim -b : edit binary using xxd-format!

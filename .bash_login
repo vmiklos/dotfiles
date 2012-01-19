@@ -2,6 +2,8 @@
 
 # avoid idiotic dos-like prompt
 PS1='\u@\h:\w\$ '
+# kill nepomuk
+# chmod 750 /usr/bin/nepomukcontroller
 # ls colors via ssh
 export LS_OPTIONS=$(echo $LS_OPTIONS|sed 's/--color=[^ ]\+/--color=auto/')
 # silence cpm warnings
