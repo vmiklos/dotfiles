@@ -5,7 +5,7 @@ set spoolfile=imaps://frugalware.org/
 account-hook . 'unset imap_user; unset imap_pass; unset tunnel'
 source 'cat ~/.mutt/accounts/*.conf|'
 
-alternates 'vmiklos@(vmiklos.hu|frugalware.org)'
+alternates 'vmiklos@(vmiklos.hu|frugalware.org|suse.com|suse.cz)|mvajna@npsh.hu'
 set reverse_name
 #set use_realname
 #set reverse_reply

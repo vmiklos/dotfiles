@@ -2,3 +2,9 @@
 
 echo "creating 10frugalware.conf"
 m4 -DPASSWORD="$(sudo ~/bin/cpm --quiet imap.*frugalware.org)" 10frugalware.conf.m4 > 10frugalware.conf
+echo "creating 20susecz.conf"
+m4 -DSUSECZPASSWORD="$(sudo ~/bin/cpm --quiet nis.*suse.de)" 20susecz.conf.m4 > 20susecz.conf
+echo "creating 30susecom.conf"
+m4 -DSUSECOMPASSWORD="$(sudo ~/bin/cpm --quiet http.*innerweb.novell.com)" 30susecom.conf.m4 > 30susecom.conf
+echo "creating 40susehu.conf"
+m4 -DSUSEHUPASSWORD="$(sudo ~/bin/cpm --quiet http.*npsh.hu)" 40susehu.conf.m4 > 40susehu.conf
