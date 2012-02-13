@@ -99,9 +99,6 @@
             metadata.confirm_on_dir_change = "true" 
             metadata.keywords_case_sensitive = "false" 
             metadata.write_orientation = "true" >
-<!-- NOTICE: Geeqie was not built with support for color profiles,
-         color profile options will have no effect.
--->
 
         <color_profiles screen_file = "" enabled = "true" use_image = "true" input_type = "0" use_x11_screen_profile = "true" >
             <profile input_file = "" input_name = "" />
