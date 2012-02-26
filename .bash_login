@@ -2,8 +2,11 @@
 
 # avoid idiotic dos-like prompt
 PS1='\u@\h:\w\$ '
-# kill nepomuk
+# other annoyances
+# - kill nepomuk
 # chmod 750 /usr/bin/nepomukcontroller
+# - konsole vs nvidia: set font size to 11.7 instead of 12
+
 # ls colors via ssh
 export LS_OPTIONS=$(echo $LS_OPTIONS|sed 's/--color=[^ ]\+/--color=auto/')
 # silence cpm warnings
