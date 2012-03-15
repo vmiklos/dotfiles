@@ -1,6 +1,6 @@
 # ACCOUNTS
 # this is the default folder which will be loaded on startup by default
-set spoolfile=imaps://frugalware.org/
+set spoolfile=imaps://imap.gmail.com/
 # unset foo bar does not work, is it a bug?
 account-hook . 'unset imap_user; unset imap_pass; unset tunnel'
 source 'cat ~/.mutt/accounts/*.conf|'

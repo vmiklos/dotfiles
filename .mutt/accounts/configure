@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "creating 10frugalware.conf"
-m4 -DPASSWORD="$(sudo ~/bin/cpm --quiet imap.*frugalware.org)" 10frugalware.conf.m4 > 10frugalware.conf
+echo "creating 10gmail.conf"
+m4 -DPASSWORD="$(sudo ~/bin/cpm --quiet googleapps.*vmiklos.hu)" 10gmail.conf.m4 > 10gmail.conf
 echo "creating 20susecz.conf"
 m4 -DSUSECZPASSWORD="$(sudo ~/bin/cpm --quiet nis.*suse.de)" 20susecz.conf.m4 > 20susecz.conf
 echo "creating 30susecom.conf"
