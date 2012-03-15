@@ -34,7 +34,10 @@ class ImapLister:
 			if i.split(" ")[-1] == dir:
 				i = "INBOX"
 			if i.split(" ")[-1][-8:] != "_archive" and not self.needs_ignore(server, i.split(" ")[-1]):
-				self.dirs.append(i.split(" ")[-1])
+				if '" "' in i:
+					self.dirs.append(i.split('" "')[-1].strip('"'))
+				else:
+					self.dirs.append(i.split(" ")[-1])
 		self.dirs.sort()
 	
 	def needs_ignore(self, server, folder):
@@ -62,7 +65,7 @@ if __name__ == "__main__":
 		sys.stderr.write(" done.\n")
 	for i in server.dirs:
 		if i.strip('"') == "INBOX":
-			sys.stdout.write("imaps://%s/%s " % (url, i.strip('"')))
+			sys.stdout.write('"imaps://%s/%s" ' % (url, i.strip('"')))
 	for i in server.dirs:
 		if i.strip('"') != "INBOX":
-			sys.stdout.write("imaps://%s/%s " % (url, i.strip('"')))
+			sys.stdout.write('"imaps://%s/%s" ' % (url, i.strip('"')))
