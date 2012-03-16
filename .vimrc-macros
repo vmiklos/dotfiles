@@ -1,6 +1,5 @@
 ""set encoding=latin2
 set encoding=utf8
-set fileencodings= " make mutt happy
 " tab -> 4spaces for ugly projects
 map <F4> <Esc>:set et<CR>:set sw=4<CR>
 map <F5> <Esc>:setlocal spell spelllang=en_gb<CR>

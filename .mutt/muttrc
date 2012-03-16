@@ -27,7 +27,7 @@ set use_envelope_from
 set move=no
 set copy=yes # copy of outgoing messages
 #set attribution="Hello,\n\nNa %d, %f pisal(a):"
-set editor="vim -c 'set tw=72 noautoindent expandtab notitle ft=mail'"
+set editor="vim -c 'set tw=72 noautoindent expandtab notitle ft=mail fileencodings='"
 set autoedit
 set include=yes
 set edit_headers
