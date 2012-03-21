@@ -52,7 +52,8 @@ command Todo call AddTodo()
 fun AddTrace()
     execute "normal a \<BS>". "\nOSL_TRACE(\"TODO: %s\", __PRETTY_FUNCTION__);"
 endfun
-map <F10> :call AddTrace()<CR>
+"map <F10> :call AddTrace()<CR>
+map <F10> :echo @%<CR>
 
 au BufReadCmd *.docx,*.dotx,*.xlsx,*.pptx call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt call zip#Browse(expand("<amatch>"))
