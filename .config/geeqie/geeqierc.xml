@@ -144,6 +144,7 @@
             <file_type key = "r3d" enabled = "true" extensions = ".r3d" description = "Red raw format" file_class = "2" writable = "false" allow_sidecar = "true" />
             <file_type key = "3fr" enabled = "true" extensions = ".3fr" description = "Hasselblad raw format" file_class = "2" writable = "false" allow_sidecar = "true" />
             <file_type key = "erf" enabled = "true" extensions = ".erf" description = "Epson raw format" file_class = "2" writable = "false" allow_sidecar = "true" />
+            <file_type key = "Digital camera RAW" enabled = "true" extensions = ".dng;.cr2;.crw;.nef;.orf;.pef;.arw;.erf;.mrw" description = "Digital camera RAW images loader." file_class = "1" writable = "true" allow_sidecar = "false" />
         </filter>
 
         <keyword_tree>
@@ -165,7 +166,7 @@
         show_thumbnails = "false" 
         show_directory_date = "false" 
         home_path = "" 
-        last_path = "/home/vmiklos" 
+        last_path = "/home/vmiklos/pictures/foto/20120416_Hamburg" 
         startup_path = "0" 
         exit_on_close = "false" 
 

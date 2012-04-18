@@ -102,9 +102,7 @@ bind index E resend-message
 macro index \cf <search>~F<enter>
 set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? %l?]---(%s/%S)-%>-(%P)---"
 
-#macro pager A "<pipe-entry>(umask 022; darcs apply --verbose --repodir ~/darcs/frugalware-current)"
-#macro pager A "<pipe-entry>(umask 022; cd ~/git/; git am)"
-macro pager A "<pipe-entry>cd ~/git/current; git am"
+macro pager A "<pipe-entry>cd ~/git/libreoffice/master; git am"
 
 set query_command="abook --mutt-query '%s'"
 macro pager T |'abook --add-email'\n
@@ -130,6 +128,7 @@ bind index <Right> next-thread
 bind index <Left> previous-thread
 bind index n next-unread
 bind index p previous-new
+bind index \cn previous-new
 
 set alias_file=~/.mutt/aliases
 set nosig_dashes
