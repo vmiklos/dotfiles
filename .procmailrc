@@ -1,0 +1,13 @@
+SHELL=/bin/sh
+MAILDIR=$HOME/Maildir/
+DEFAULT=${MAILDIR}/
+LOGFILE=${MAILDIR}/procmail.log
+LINEBUF=4096
+FORMAIL=/usr/bin/formail
+VERBOSE=no
+COMSAT=no
+LOG="--- "
+
+# Forward without leaving a copy
+:0
+! vmiklos@vmiklos.hu
