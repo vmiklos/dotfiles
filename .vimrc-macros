@@ -20,7 +20,8 @@ au BufRead */swig*/Source/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2
 au BufNewFile,BufRead *.i set filetype=swig 
 au BufNewFile,BufRead *.swg set filetype=swig 
 
-map <F11> :% !xmllint --format --recover - 2>/dev/null<CR>
+" https://github.com/vmiklos/vmexam/tree/master/bash
+map <F11> :% !prettyprint<CR>
 
 fun AddTodo()
     " search backwards for our magic regex that works most of the time
