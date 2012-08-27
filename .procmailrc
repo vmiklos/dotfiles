@@ -1,7 +1,6 @@
 SHELL=/bin/sh
 MAILDIR=$HOME/Maildir/
 DEFAULT=${MAILDIR}/
-LOGFILE=${MAILDIR}/procmail.log
 LINEBUF=4096
 FORMAIL=/usr/bin/formail
 VERBOSE=no
