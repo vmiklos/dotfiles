@@ -23,3 +23,5 @@ export LESS="FMRX"
 alias sudo="PATH=$PATH:/sbin:/usr/sbin sudo"
 
 alias webcam="mplayer -tv driver=v4l2:device=/dev/video0 tv://"
+
+dvdrdata() { growisofs -dvd-compat -overburn -Z /dev/dvdrw=$1; eject /dev/dvdrw;}
