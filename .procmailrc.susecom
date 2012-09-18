@@ -1,0 +1,13 @@
+SHELL=/bin/sh
+LINEBUF=4096
+FORMAIL=/usr/bin/formail
+VERBOSE=no
+COMSAT=no
+LOG="--- "
+
+:0fw
+| /usr/bin/formail -i "List-Id: inbox.vmiklos.suse.com"
+
+# Forward without leaving a copy
+:0
+! vmiklos@suse.cz
