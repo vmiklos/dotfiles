@@ -1,0 +1,10 @@
+# pdf
+application/pdf; okular %s
+# odt
+application/vnd.oasis.opendocument.text; soffice %s
+# rtf
+application/rtf; soffice %s
+# doc
+application/msword; soffice %s
+# docx
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; soffice %s
