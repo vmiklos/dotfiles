@@ -75,7 +75,7 @@ use_rfc2833=0
 use_ipv6=0
 register_only_when_network_is_up=1
 default_proxy=0
-contact=sip:vmiklos@t520
+contact=sip:vmiklos@suse.cz
 
 [GtkUi]
 advanced_ui=1
