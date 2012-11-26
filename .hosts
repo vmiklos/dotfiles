@@ -1,0 +1,2 @@
+# workaround for stupid router: when I'm at home, this is uncommented, when not, this is commented
+192.168.241.5 plug plug.vmiklos.hu staging.vmiklos.hu
