@@ -56,7 +56,7 @@ endfun
 "map <F10> :call AddTrace()<CR>
 map <F10> :echo @%<CR>
 
-au BufReadCmd *.docx,*.docm,*.dotx,*.xlsx,*.pptx call zip#Browse(expand("<amatch>"))
+au BufReadCmd *.docx,*.docm,*.dotx,*.xlsx,*.pptx,*.apk call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.sxw call zip#Browse(expand("<amatch>"))
 "au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
