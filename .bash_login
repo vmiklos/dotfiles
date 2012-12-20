@@ -26,3 +26,7 @@ alias sudo="PATH=$PATH:/sbin:/usr/sbin sudo"
 alias webcam="mplayer -tv driver=v4l2:device=/dev/video0 tv://"
 
 dvdrdata() { growisofs -dvd-compat -overburn -Z /dev/dvdrw=$1; eject /dev/dvdrw;}
+# cd writing aliases
+alias cdblank='cdrecord -v gracetime=2 dev=/dev/cdrw blank=fast'
+alias cdrdata='cdrecord -v -dao dev=/dev/cdrw speed=52 gracetime=2 driveropts=burnfree -eject'
+alias cdrwdata='cdrecord -v -dao dev=/dev/cdrw speed=52 gracetime=2 driveropts=burnfree blank=fast -eject'
