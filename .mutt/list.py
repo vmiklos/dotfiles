@@ -1,3 +1,5 @@
+import imaplib
+#imaplib.Debug = 10
 from imaplib import *
 import sys, config
 
