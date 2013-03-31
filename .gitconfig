@@ -3,3 +3,5 @@
 	email = vmiklos@suse.cz
 [color]
 	grep = auto
+[push]
+	default = current
