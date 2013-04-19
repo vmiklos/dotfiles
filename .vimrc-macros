@@ -78,3 +78,5 @@ augroup END
 set tags=./tags,./../tags,./../../tags,./../../../tags,./../../../../tags,./../../../../../tags,tags,../tags,.
 
 source $VIMRUNTIME/macros/matchit.vim
+
+set maxmempattern=2000
