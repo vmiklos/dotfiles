@@ -80,3 +80,7 @@ set tags=./tags,./../tags,./../../tags,./../../../tags,./../../../../tags,./../.
 source $VIMRUNTIME/macros/matchit.vim
 
 set maxmempattern=2000
+
+" Fine-tune completion: make it bash-like.
+set wildmenu
+set wildmode=longest,list
