@@ -21,6 +21,7 @@ au BufNewFile,BufRead *.i set filetype=swig
 au BufNewFile,BufRead *.swg set filetype=swig 
 
 " https://github.com/vmiklos/vmexam/tree/master/bash
+imap <C-F> <ESC>:r!goobook <cword><CR>
 map <F11> :% !prettyprint<CR>
 
 fun AddTodo()
