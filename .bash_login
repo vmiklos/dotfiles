@@ -24,6 +24,7 @@ export MAKEFLAGS="-l`grep -c ^processor /proc/cpuinfo`"
 alias sudo="PATH=$PATH:/sbin:/usr/sbin sudo"
 
 alias webcam="mplayer -tv driver=v4l2:device=/dev/video0 tv://"
+alias tv="vlc http://streamer.carnation.hu/mtvonlinem1" # see http://www.eloadas.tv/
 
 dvdrdata() { growisofs -dvd-compat -overburn -Z /dev/dvdrw=$1; eject /dev/dvdrw;}
 # cd writing aliases
