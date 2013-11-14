@@ -1,14 +1,15 @@
-$ zypper lr -u
-#  | Alias                     | Name                                               | Enabled | Refresh | URI                                                                           
----+---------------------------+----------------------------------------------------+---------+---------+-------------------------------------------------------------------------------
- 1 | home-vmiklos              | home-vmiklos                                       | Yes     | No      | http://download.opensuse.org/repositories/home:/vmiklos/openSUSE_12.2/        
- 2 | packman                   | packman                                            | Yes     | No      | http://packman.inode.at/suse/12.2                                             
- 3 | repo-debug                | openSUSE-12.2-Debug                                | No      | Yes     | http://download.opensuse.org/debug/distribution/12.2/repo/oss/                
- 4 | repo-debug-update         | openSUSE-12.2-Update-Debug                         | No      | Yes     | http://download.opensuse.org/debug/update/12.2/                               
- 5 | repo-debug-update-non-oss | openSUSE-12.2-Update-Debug-Non-Oss                 | No      | Yes     | http://download.opensuse.org/debug/update/12.2-non-oss/                       
- 6 | repo-non-oss              | openSUSE-12.2-Non-Oss                              | Yes     | Yes     | http://download.opensuse.org/distribution/12.2/repo/non-oss/                  
- 7 | repo-oss                  | openSUSE-12.2-Oss                                  | Yes     | Yes     | http://download.opensuse.org/distribution/12.2/repo/oss/                      
- 8 | repo-source               | openSUSE-12.2-Source                               | No      | Yes     | http://download.opensuse.org/source/distribution/12.2/repo/oss/               
- 9 | repo-update               | openSUSE-12.2-Update                               | Yes     | Yes     | http://download.opensuse.org/update/12.2/                                     
-10 | repo-update-non-oss       | openSUSE-12.2-Update-Non-Oss                       | Yes     | Yes     | http://download.opensuse.org/update/12.2-non-oss/                             
-11 | windows_mingw_win32       | Cross-toolchain for 32-bit windows (openSUSE_12.2) | Yes     | No      | http://download.opensuse.org/repositories/windows:/mingw:/win32/openSUSE_12.2/
+$ zypper lr -u|sed 's/^.\{5\}//'
+Alias                     | Name                                               | Enabled | Refresh | URI                                                                           
+--------------------------+----------------------------------------------------+---------+---------+-------------------------------------------------------------------------------
+google-talkplugin         | google-talkplugin                                  | Yes     | No      | http://dl.google.com/linux/talkplugin/rpm/stable/x86_64                       
+home-vmiklos              | home-vmiklos                                       | Yes     | No      | http://download.opensuse.org/repositories/home:/vmiklos/openSUSE_12.3/        
+packman                   | packman                                            | Yes     | No      | http://packman.inode.at/suse/12.3                                             
+repo-debug                | openSUSE-12.3-Debug                                | Yes     | Yes     | http://download.opensuse.org/debug/distribution/12.3/repo/oss/                
+repo-debug-update         | openSUSE-12.3-Update-Debug                         | No      | Yes     | http://download.opensuse.org/debug/update/12.3/                               
+repo-debug-update-non-oss | openSUSE-12.3-Update-Debug-Non-Oss                 | No      | Yes     | http://download.opensuse.org/debug/update/12.3-non-oss/                       
+repo-non-oss              | openSUSE-12.3-Non-Oss                              | Yes     | Yes     | http://download.opensuse.org/distribution/12.3/repo/non-oss/                  
+repo-oss                  | openSUSE-12.3-Oss                                  | Yes     | Yes     | http://download.opensuse.org/distribution/12.3/repo/oss/                      
+repo-source               | openSUSE-12.3-Source                               | No      | Yes     | http://download.opensuse.org/source/distribution/12.3/repo/oss/               
+repo-update               | openSUSE-12.3-Update                               | Yes     | Yes     | http://download.opensuse.org/update/12.3/                                     
+repo-update-non-oss       | openSUSE-12.3-Update-Non-Oss                       | Yes     | Yes     | http://download.opensuse.org/update/12.3-non-oss/                             
+windows_mingw_win32       | Cross-toolchain for 32-bit windows (openSUSE_12.3) | Yes     | No      | http://download.opensuse.org/repositories/windows:/mingw:/win32/openSUSE_12.3/
