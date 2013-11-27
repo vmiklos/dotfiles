@@ -85,3 +85,6 @@ set maxmempattern=2000
 " Fine-tune completion: make it bash-like.
 set wildmenu
 set wildmode=longest,list
+
+" No indent after namespaces.
+set cino=N-s
