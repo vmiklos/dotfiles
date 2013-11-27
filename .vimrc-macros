@@ -22,7 +22,7 @@ au BufNewFile,BufRead *.swg set filetype=swig
 
 " https://github.com/vmiklos/vmexam/tree/master/bash
 imap <C-F> <ESC>:r!goobook <cword><CR>
-map <F11> :% !prettyprint<CR>
+map <F11> :set ff=unix<CR>:% !prettyprint<CR>
 
 fun AddTodo()
     " search backwards for our magic regex that works most of the time
