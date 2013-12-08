@@ -1,3 +1,5 @@
+# usage: astyle --options=$HOME/.astyle.options \*.cxx \*.hxx
+
 # formatting options
 style=allman
 indent=spaces=4
