@@ -86,5 +86,6 @@ set maxmempattern=2000
 set wildmenu
 set wildmode=longest,list
 
-" No indent after namespaces.
-set cino=N-s
+" No indent after namespaces + automtically indent lines inside parentheses.
+" http://orchistro.tistory.com/236
+set cinoptions=N-s,(0
