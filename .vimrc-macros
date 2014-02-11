@@ -51,13 +51,15 @@ endfun
 
 command Todo call AddTodo()
 
+command XPath XPathSearchPrompt
+
 fun AddTrace()
     execute "normal a \<BS>". "\nOSL_TRACE(\"TODO: %s\", __PRETTY_FUNCTION__);"
 endfun
 "map <F10> :call AddTrace()<CR>
 map <F10> :echo @%<CR>
 
-au BufReadCmd *.docx,*.docm,*.dotx,*.dotm,*.xlsx,*.pptx,*.apk call zip#Browse(expand("<amatch>"))
+au BufReadCmd *.docx,*.docm,*.dotx,*.dotm,*.xlsx,*.pptx,*.vsdx,*.apk call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.odt,*.odm,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.sxw call zip#Browse(expand("<amatch>"))
 "au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
