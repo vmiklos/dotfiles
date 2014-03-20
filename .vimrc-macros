@@ -20,8 +20,7 @@ au BufRead */swig*/Source/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2
 au BufNewFile,BufRead *.i set filetype=swig 
 au BufNewFile,BufRead *.swg set filetype=swig 
 
-" https://github.com/vmiklos/vmexam/tree/master/bash
-imap <C-F> <ESC>:r!goobook <cword><CR>
+imap <C-F> <ESC>:r!goocaa -q <cword><CR>
 map <F11> :set ff=unix<CR>:% !prettyprint<CR>
 
 fun AddTodo()
@@ -60,7 +59,7 @@ endfun
 map <F10> :echo @%<CR>
 
 au BufReadCmd *.docx,*.docm,*.dotx,*.dotm,*.xlsx,*.pptx,*.vsdx,*.apk call zip#Browse(expand("<amatch>"))
-au BufReadCmd *.odt,*.odm,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt call zip#Browse(expand("<amatch>"))
+au BufReadCmd *.odt,*.odm,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt,*.odb call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.sxw call zip#Browse(expand("<amatch>"))
 "au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
