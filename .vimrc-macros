@@ -2,6 +2,7 @@
 "set rtp+=~/.vim/bundle/vundle/
 "call vundle#rc()
 "Plugin 'gmarik/vundle'
+" https://github.com/Valloric/YouCompleteMe is also interesting, but too much automagic (for me at least)
 
 ""set encoding=latin2
 set encoding=utf8
