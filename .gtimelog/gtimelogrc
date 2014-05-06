@@ -1,5 +1,6 @@
 [gtimelog]
 editor = xdg-open
 task_list_url = https://chronophage.collabora.co.uk/tasks
+# report_to_url = https://test.chronophage.collabora.co.uk/timesheet
 report_to_url = https://chronophage.collabora.co.uk/timesheet
 server_cert = ~/.gtimelog/Collabora-CA.crt
