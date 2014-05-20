@@ -1,15 +1,15 @@
 $ zypper lr -u|sed 's/^.\{5\}//'
-Alias                     | Name                                               | Enabled | Refresh | URI                                                                           
---------------------------+----------------------------------------------------+---------+---------+-------------------------------------------------------------------------------
-google-talkplugin         | google-talkplugin                                  | Yes     | No      | http://dl.google.com/linux/talkplugin/rpm/stable/x86_64                       
-home-vmiklos              | home-vmiklos                                       | Yes     | No      | http://download.opensuse.org/repositories/home:/vmiklos/openSUSE_13.1/        
-packman                   | packman                                            | Yes     | No      | http://packman.inode.at/suse/13.1                                             
-repo-debug                | openSUSE-13.1-Debug                                | Yes     | Yes     | http://download.opensuse.org/debug/distribution/13.1/repo/oss/                
-repo-debug-update         | openSUSE-13.1-Update-Debug                         | No      | Yes     | http://download.opensuse.org/debug/update/13.1/                               
-repo-debug-update-non-oss | openSUSE-13.1-Update-Debug-Non-Oss                 | No      | Yes     | http://download.opensuse.org/debug/update/13.1-non-oss/                       
-repo-non-oss              | openSUSE-13.1-Non-Oss                              | Yes     | Yes     | http://download.opensuse.org/distribution/13.1/repo/non-oss/                  
-repo-oss                  | openSUSE-13.1-Oss                                  | Yes     | Yes     | http://download.opensuse.org/distribution/13.1/repo/oss/                      
-repo-source               | openSUSE-13.1-Source                               | No      | Yes     | http://download.opensuse.org/source/distribution/13.1/repo/oss/               
-repo-update               | openSUSE-13.1-Update                               | Yes     | Yes     | http://download.opensuse.org/update/13.1/                                     
-repo-update-non-oss       | openSUSE-13.1-Update-Non-Oss                       | Yes     | Yes     | http://download.opensuse.org/update/13.1-non-oss/                             
-windows_mingw_win32       | Cross-toolchain for 32-bit windows (openSUSE_13.1) | Yes     | No      | http://download.opensuse.org/repositories/windows:/mingw:/win32/openSUSE_13.1/
+Alias                     | Name                               | Enabled | Refresh | URI
+--------------------------+------------------------------------+---------+---------+------------------------------------------------------------------------------
+google-talkplugin         | google-talkplugin                  | Yes     | No      | http://dl.google.com/linux/talkplugin/rpm/stable/x86_64
+home-vmiklos              | home-vmiklos                       | Yes     | No      | http://download.opensuse.org/repositories/home:/vmiklos/openSUSE_13.1/
+libreoffice-stable        | libreoffice-factory                | Yes     | No      | http://download.opensuse.org/repositories/LibreOffice:/Factory/openSUSE_13.1/
+packman                   | packman                            | Yes     | No      | http://packman.inode.at/suse/13.1
+repo-debug                | openSUSE-13.1-Debug                | Yes     | Yes     | http://download.opensuse.org/debug/distribution/13.1/repo/oss/
+repo-debug-update         | openSUSE-13.1-Update-Debug         | No      | Yes     | http://download.opensuse.org/debug/update/13.1/
+repo-debug-update-non-oss | openSUSE-13.1-Update-Debug-Non-Oss | No      | Yes     | http://download.opensuse.org/debug/update/13.1-non-oss/
+repo-non-oss              | openSUSE-13.1-Non-Oss              | Yes     | Yes     | http://download.opensuse.org/distribution/13.1/repo/non-oss/
+repo-oss                  | openSUSE-13.1-Oss                  | Yes     | Yes     | http://download.opensuse.org/distribution/13.1/repo/oss/
+repo-source               | openSUSE-13.1-Source               | No      | Yes     | http://download.opensuse.org/source/distribution/13.1/repo/oss/
+repo-update               | openSUSE-13.1-Update               | Yes     | Yes     | http://download.opensuse.org/update/13.1/
+repo-update-non-oss       | openSUSE-13.1-Update-Non-Oss       | Yes     | Yes     | http://download.opensuse.org/update/13.1-non-oss/
