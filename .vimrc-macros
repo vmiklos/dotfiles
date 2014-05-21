@@ -26,7 +26,7 @@ au BufRead */swig*/Source/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2
 au BufNewFile,BufRead *.i set filetype=swig 
 au BufNewFile,BufRead *.swg set filetype=swig 
 
-imap <C-F> <ESC>:r!goocaa -q <cword><CR>
+imap <C-F> <ESC>:r!goocaa -q -t <cword><CR>
 map <F11> :set ff=unix<CR>:% !prettyprint<CR>
 
 fun AddTodo()
