@@ -34,3 +34,6 @@ alias cdrwdata='cdrecord -v -dao dev=/dev/cdrw speed=52 gracetime=2 driveropts=b
 
 # don't offer other related manpages instead of showing what was requested
 export MAN_POSIXLY_CORRECT=1
+
+# ccache with Clang without CCACHE_CPP2 set causes spurious warnings
+export CCACHE_CPP2=1
