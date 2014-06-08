@@ -1,0 +1,16 @@
+#
+# ~/.x11vncrc
+#
+# Additonal tricks:
+#
+# 1) Set up the ssh tunnel with: ssh -L 5900:localhost:5900 <server> x11vnc
+#
+# 2) Connect with: krdc --fullscreen vnc://localhost:5900
+#
+
+localhost
+display :0
+# http://www.karlrunge.com/x11vnc/faq.html#faq-remap-capslock: fixes Caps_Lock
+skip_lockkeys
+# http://www.karlrunge.com/x11vnc/faq.html#faq-repeated-keys: fixes repeated keys
+repeat
