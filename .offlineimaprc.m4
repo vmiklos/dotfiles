@@ -1,18 +1,18 @@
 changequote(<!,!>)
 [general]
-accounts = suse-cz
+accounts = vmiklos-gmail
 
-[Account suse-cz]
-localrepository = suse-cz-local
-remoterepository = suse-cz-remote
+[Account vmiklos-gmail]
+localrepository = vmiklos-gmail-local
+remoterepository = vmiklos-gmail-remote
 
-[Repository suse-cz-remote]
+[Repository vmiklos-gmail-remote]
 type = IMAP
-remotehost = imap.suse.de
+remotehost = imap.gmail.com
 ssl = yes
-remoteuser = vmiklos
-remotepass = SUSECZPASSWORD
+remoteuser = vmiklos@vmiklos.hu
+remotepass = PASSWORD
 
-[Repository suse-cz-local]
+[Repository vmiklos-gmail-local]
 type = Maildir
 localfolders = ~/.offlineimap-local
