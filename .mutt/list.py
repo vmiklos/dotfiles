@@ -35,7 +35,7 @@ class ImapLister:
 		for i in mylist(dir)[1]:
 			if i.split(" ")[-1] == dir:
 				i = "INBOX"
-			if i.split(" ")[-1][-8:] != "_archive" and not self.needs_ignore(server, i.split(" ")[-1]):
+			if i.split(" ")[-1][-8:] != "_archive" and not self.needs_ignore(server, i):
 				if '" "' in i:
 					self.dirs.append(i.split('" "')[-1].strip('"'))
 				else:
@@ -45,7 +45,7 @@ class ImapLister:
 	def needs_ignore(self, server, folder):
 		if server not in config.ignore.keys():
 			return False
-		if folder.strip('"') in config.ignore[server]:
+		if folder in config.ignore[server]:
 			return True
 		else:
 			return False
