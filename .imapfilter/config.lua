@@ -1,7 +1,7 @@
 -- gmail: echo "before:$(date --date="90 days ago" +%Y/%m/%d) label:lists-linux-hotplug"
 
 account = IMAP {
-	server = 'imap.suse.de',
+	server = 'mail.collabora.co.uk',
 	username = 'vmiklos',
 	ssl = 'ssl3'
 }
