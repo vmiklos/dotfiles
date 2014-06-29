@@ -17,3 +17,5 @@ schedule = watch_directory,5,5,load_start=./watch/*.torrent
 
 # Port range to use for listening.
 port_range = 6916-6916
+
+dht = auto
