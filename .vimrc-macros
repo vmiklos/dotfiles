@@ -64,6 +64,14 @@ endfun
 "map <F10> :call AddTrace()<CR>
 map <F10> :echo @%<CR>
 
+fun! ShowFuncName()
+  let lnum = line(".")
+  let col = col(".")
+  echo getline(search("^\\( \\{4}\\|\\t\\)\\?\\a\\S\\{-}\\( \\a\\S\\{-}\\)\\+\\s\\?(.*[^;]\\s\\{-}$", 'bW'))
+  call search("\\%" . lnum . "l" . "\\%" . col . "c")
+endfun
+map f :call ShowFuncName() <CR>
+
 au BufReadCmd *.docx,*.docm,*.dotx,*.dotm,*.xlsx,*.pptx,*.vsdx,*.apk call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.odt,*.odm,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt,*.odb call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.sxw call zip#Browse(expand("<amatch>"))
