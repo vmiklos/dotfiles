@@ -5,7 +5,7 @@ set spoolfile=imaps://imap.gmail.com/
 account-hook . 'unset imap_user; unset imap_pass; unset tunnel'
 source 'cat ~/.mutt/accounts/*.conf|'
 
-alternates 'vmiklos@(vmiklos.hu|frugalware.org|suse.com|suse.cz|collabora.com|collabora.co.uk)|miklos.vajna@(collabora.com|collabora.co.uk)'
+alternates 'vmiklos@(vmiklos.hu|frugalware.org|suse.com|collabora.com|collabora.co.uk)|miklos.vajna@(collabora.com|collabora.co.uk)'
 set reverse_name
 #set use_realname
 #set reverse_reply
