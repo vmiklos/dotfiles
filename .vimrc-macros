@@ -102,6 +102,14 @@ set maxmempattern=2000
 set wildmenu
 set wildmode=longest,list
 
-" No indent after namespaces + automtically indent lines inside parentheses.
+" No indent after namespaces + automatically indent lines inside parentheses.
 " http://orchistro.tistory.com/236
 set cinoptions=N-s,(0,:0
+
+" omnicompletecpp
+" close automatically the preview window after a completion
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" do not run automatically a completion after a '.' or '->'
+let OmniCpp_MayCompleteDot = 0
+let OmniCpp_MayCompleteArrow = 0
