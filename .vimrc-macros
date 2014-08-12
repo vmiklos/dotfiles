@@ -122,3 +122,5 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " do not run automatically a completion after a '.' or '->'
 let OmniCpp_MayCompleteDot = 0
 let OmniCpp_MayCompleteArrow = 0
+" avoid preview window; default would be menu,preview
+set completeopt=menu
