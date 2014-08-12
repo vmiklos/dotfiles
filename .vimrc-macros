@@ -3,6 +3,7 @@
 "call vundle#rc()
 "Plugin 'gmarik/vundle'
 " https://github.com/Valloric/YouCompleteMe is also interesting, but too much automagic (for me at least)
+call pathogen#runtime_append_all_bundles()
 
 ""set encoding=latin2
 set encoding=utf8
