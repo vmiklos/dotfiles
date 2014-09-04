@@ -8,3 +8,8 @@ alias gqview="geeqie"
 alias killallssh="killall ssh; killall mutt"
 alias iotop="sudo iotop -P -d 3"
 alias lotail="cd ~/git/libreoffice/master; tail -f log"
+
+units()
+{
+    watch 'for i in $(pidof cppunittester); do cat /proc/$i/cmdline | tr "\000" " "; echo; done|sed "s|.*workdir/LinkTarget/CppunitTest/libtest_\([^ ]\+\).so .*|\1|g"'
+}
