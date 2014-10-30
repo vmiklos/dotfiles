@@ -90,9 +90,9 @@ augroup Binary
 	au BufWritePost *.bin set nomod | endif
 augroup END
 
-" Tags files are searched first relative to the current file, then relative to
-" the current working directory, and last in the $HOME directory.
-set tags=./tags,./../tags,./../../tags,./../../../tags,./../../../../tags,./../../../../../tags,tags,../tags,.
+" Look in the current directory for "tags", and work up the tree towards root
+" until one is found.
+set tags=./tags;/
 
 source $VIMRUNTIME/macros/matchit.vim
 
