@@ -2,6 +2,8 @@
 application/pdf; okular %s
 # odt
 application/vnd.oasis.opendocument.text; soffice %s
+# html
+text/html; w3m -I %{charset} -T text/html -dump %s; copiousoutput
 # rtf
 application/rtf; soffice %s
 # doc
