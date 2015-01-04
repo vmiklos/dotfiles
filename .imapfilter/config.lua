@@ -3,7 +3,7 @@
 account = IMAP {
 	server = 'mail.collabora.co.uk',
 	username = 'vmiklos',
-	ssl = 'ssl3'
+	ssl = 'tls1'
 }
 results = account['Lists.libreoffice']:is_older(90)
 results:delete_messages()
