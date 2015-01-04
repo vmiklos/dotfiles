@@ -5,3 +5,9 @@
 	grep = auto
 [push]
 	default = current
+[alias]
+	mylog = log --author=vmiklos
+[review "review.cyanogenmod.org"]
+	username = vmiklos
+[http]
+	cookiefile = /home/vmiklos/.gitcookies
