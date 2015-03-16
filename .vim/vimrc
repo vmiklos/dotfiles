@@ -75,6 +75,6 @@ else
   set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
-if filereadable($HOME . "/.vimrc-macros")
-        source $HOME/.vimrc-macros
+if filereadable($HOME . "/.vim/vimrc-macros")
+        source $HOME/.vim/vimrc-macros
 endif
