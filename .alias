@@ -1,6 +1,6 @@
 # socks proxy: -D 9090 + 2>/dev/null
 # reverse proxy: -R 19023:localhost:22
-alias plug='ssh -4 -C plug -t "source ~/.bash_login; TERM=rxvt screen -DR"'
+alias plug='ssh -4 -C plug -t "source ~/.bash_login; screen -DR"'
 alias genesis='ssh genesis'
 alias helicon="ssh helicon"
 
