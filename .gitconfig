@@ -7,6 +7,8 @@
 	default = current
 [alias]
 	mylog = log --author=vmiklos
+	# %cd is _committer_ date
+	myonelinerlog = log --author=vmiklos --date=short --pretty=format:'%H %cd %s'
 [review "review.cyanogenmod.org"]
 	username = vmiklos
 [http]
