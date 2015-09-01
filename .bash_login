@@ -40,3 +40,9 @@ export CCACHE_CPP2=1
 
 # Make cupsdoprint work out of the box.
 export PRINTER="hp-p1566"
+
+# Try to attach to an existing screen by default.
+alias screen="screen -DR"
+
+# Find out what's the last pushed daily build.
+alias daily="ssh dev-downloads \"sh -c 'cd /srv/git/lo-linux-dbgutil-daily.git; git log -1'\""
