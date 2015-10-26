@@ -47,10 +47,8 @@ endif
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
+  " Enable file-type based indentation, see
+  " <http://vim.wikia.com/wiki/Indenting_source_code#File-type_based_indentation>.
   filetype plugin indent on
 
   " Put these in an autocmd group, so that we can delete them easily.
