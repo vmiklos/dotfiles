@@ -126,3 +126,7 @@ let OmniCpp_MayCompleteDot = 0
 let OmniCpp_MayCompleteArrow = 0
 " avoid preview window; default would be menu,preview
 set completeopt=menu
+
+" Avoid e.g. the selection created by V automatically end up on the primary
+" clipboard.
+set clipboard=exclude:.*
