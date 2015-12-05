@@ -78,6 +78,7 @@ map f :call ShowFuncName() <CR>
 au BufReadCmd *.docx,*.docm,*.dotx,*.dotm,*.xlsx,*.pptx,*.vsdx,*.apk call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.odt,*.odm,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt,*.odb call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.sxw call zip#Browse(expand("<amatch>"))
+au BufReadCmd *.k3b call zip#Browse(expand("<amatch>"))
 "au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 " vim -b : edit binary using xxd-format!
