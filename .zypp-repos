@@ -1,14 +1,15 @@
 $ zypper lr -u|sed 's/^.\{5\}//'
-Alias                     | Name                               | Enabled | Refresh | URI
---------------------------+------------------------------------+---------+---------+------------------------------------------------------------------------------
-google-talkplugin         | google-talkplugin                  | Yes     | No      | http://dl.google.com/linux/talkplugin/rpm/stable/x86_64
-home-vmiklos              | home-vmiklos                       | Yes     | No      | http://download.opensuse.org/repositories/home:/vmiklos/openSUSE_13.2/
-packman                   | packman                            | Yes     | No      | http://packman.inode.at/suse/openSUSE_13.2
-repo-debug                | openSUSE-13.2-Debug                | No      | Yes     | http://download.opensuse.org/debug/distribution/13.2/repo/oss/
-repo-debug-update         | openSUSE-13.2-Update-Debug         | No      | Yes     | http://download.opensuse.org/debug/update/13.2/
-repo-debug-update-non-oss | openSUSE-13.2-Update-Debug-Non-Oss | No      | Yes     | http://download.opensuse.org/debug/update/13.2-non-oss/
-repo-non-oss              | openSUSE-13.2-Non-Oss              | Yes     | Yes     | http://download.opensuse.org/distribution/13.2/repo/non-oss/
-repo-oss                  | openSUSE-13.2-Oss                  | Yes     | Yes     | http://download.opensuse.org/distribution/13.2/repo/oss/
-repo-source               | openSUSE-13.2-Source               | No      | Yes     | http://download.opensuse.org/source/distribution/13.2/repo/oss/
-repo-update               | openSUSE-13.2-Update               | Yes     | Yes     | http://download.opensuse.org/update/13.2/
-repo-update-non-oss       | openSUSE-13.2-Update-Non-Oss       | Yes     | Yes     | http://download.opensuse.org/update/13.2-non-oss/
+Alias                     | Name                                    | Enabled | GPG Check | Refresh | URI
+--------------------------+-----------------------------------------+---------+-----------+---------+----------------------------------------------------------------------------
+google-earth              | google-earth                            | Yes     | ( p) Yes  | Yes     | http://dl.google.com/linux/earth/rpm/stable/x86_64
+google-talkplugin         | google-talkplugin                       | Yes     | ( p) Yes  | Yes     | http://dl.google.com/linux/talkplugin/rpm/stable/x86_64
+home-vmiklos              | home-vmiklos                            | Yes     | (r ) Yes  | No      | http://download.opensuse.org/repositories/home:/vmiklos/openSUSE_Leap_42.1/
+packman                   | packman                                 | Yes     | (r ) Yes  | No      | http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_42.1/
+repo-debug                | openSUSE-Leap-42.1-Debug                | No      | ----      | No      | http://download.opensuse.org/debug/distribution/leap/42.1/repo/oss/
+repo-debug-update         | openSUSE-Leap-42.1-Update-Debug         | No      | ----      | No      | http://download.opensuse.org/debug/update/leap/42.1/oss
+repo-debug-update-non-oss | openSUSE-Leap-42.1-Update-Debug-Non-Oss | No      | ----      | No      | http://download.opensuse.org/debug/update/leap/42.1/non-oss/
+repo-non-oss              | openSUSE-Leap-42.1-Non-Oss              | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/distribution/leap/42.1/repo/non-oss/
+repo-oss                  | openSUSE-Leap-42.1-Oss                  | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/distribution/leap/42.1/repo/oss/
+repo-source               | openSUSE-Leap-42.1-Source               | No      | ----      | No      | http://download.opensuse.org/source/distribution/leap/42.1/repo/oss/
+repo-update               | openSUSE-Leap-42.1-Update               | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/update/leap/42.1/oss/
+repo-update-non-oss       | openSUSE-Leap-42.1-Update-Non-Oss       | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/update/leap/42.1/non-oss/
