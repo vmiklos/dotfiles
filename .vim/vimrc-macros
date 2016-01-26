@@ -131,3 +131,7 @@ set completeopt=menu
 " Avoid e.g. the selection created by V automatically end up on the primary
 " clipboard.
 set clipboard=exclude:.*
+
+" http://andrew.stwrt.ca/posts/project-specific-vimrc/
+set exrc
+set secure
