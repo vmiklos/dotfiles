@@ -135,3 +135,13 @@ set clipboard=exclude:.*
 " http://andrew.stwrt.ca/posts/project-specific-vimrc/
 set exrc
 set secure
+
+" https://github.com/rhysd/clang-type-inspector.vim
+let g:clang_type_inspector#automatic_inspection = 0
+"map <C-i> :echo clang_type_inspector#inspect_type_at(line('.'), col('.'), {})<CR>
+"let g:clang_type_inspector#default_compiler_args = '-std=c++1y'
+fun! ClangInspectType()
+    let g:clang_type_inspector#default_compiler_args = system('echo -std=c++1y')
+    echo clang_type_inspector#inspect_type_at(line('.'), col('.'), {})
+endfun
+map <silent><C-i> :call ClangInspectType() <CR>
