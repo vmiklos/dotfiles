@@ -136,11 +136,12 @@ set clipboard=exclude:.*
 set exrc
 set secure
 
-" https://github.com/rhysd/clang-type-inspector.vim
-let g:clang_type_inspector#automatic_inspection = 0
+" Minimal version of <https://github.com/rhysd/clang-type-inspector.vim>, so
+" you need only <https://github.com/rhysd/libclang-vim>.
 fun! ClangInspectType()
     " If you don't have get-compiler-args and just want to try this out, use: system('echo -std=c++1y')
-    let g:clang_type_inspector#default_compiler_args = system('get-compiler-args '.expand('%:p'))
-    echo clang_type_inspector#inspect_type_at(line('.'), col('.'), {})
+    let compiler_args = system('get-compiler-args '.expand('%:p'))
+    let type_info = libclang#deduction#type_at(expand('%:p'), line('.'), col('.'), compiler_args)
+    echo type_info.type
 endfun
 map <silent><C-i> :call ClangInspectType() <CR>
