@@ -142,6 +142,8 @@ fun! ClangInspectType()
     " If you don't have get-compiler-args and just want to try this out, use: system('echo -std=c++1y')
     let compiler_args = system('get-compiler-args '.expand('%:p'))
     let type_info = libclang#deduction#type_at(expand('%:p'), line('.'), col('.'), compiler_args)
+    " Use '.canonical.type' instead of '.type' if you want e.g.
+    " 'std::basic_string<char>', not std::string.
     echo type_info.type
 endfun
 map <silent><C-i> :call ClangInspectType() <CR>
