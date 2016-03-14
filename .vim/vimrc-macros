@@ -67,14 +67,6 @@ endfun
 " See <http://vim.wikia.com/wiki/Get_the_name_of_the_current_file>.
 map <F10> :echo expand('%:p').':'.line('.')<CR>
 
-fun! ShowFuncName()
-  let lnum = line(".")
-  let col = col(".")
-  echo getline(search("^\\( \\{4}\\|\\t\\)\\?\\a\\S\\{-}\\( \\a\\S\\{-}\\)\\+\\s\\?(.*[^;]\\s\\{-}$", 'bW'))
-  call search("\\%" . lnum . "l" . "\\%" . col . "c")
-endfun
-map f :call ShowFuncName() <CR>
-
 au BufReadCmd *.docx,*.docm,*.dotx,*.dotm,*.xlsx,*.pptx,*.vsdx,*.apk call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.odt,*.odm,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt,*.odb call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.sxw call zip#Browse(expand("<amatch>"))
@@ -147,3 +139,11 @@ fun! ClangInspectType()
     echo type_info.type
 endfun
 map <silent><C-i> :call ClangInspectType() <CR>
+
+fun! ShowFuncName()
+    let compiler_args = system('get-compiler-args '.expand('%:p'))
+    let func_name = system('get-current-function '.expand('%:p').' '.line('.').' '.col('.').' '.compiler_args)
+    " Strip newlines.
+    echo substitute(func_name, '\n\+$', '', '')
+endfun
+map <silent>f :call ShowFuncName() <CR>
