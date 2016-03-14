@@ -142,8 +142,7 @@ map <silent><C-i> :call ClangInspectType() <CR>
 
 fun! ShowFuncName()
     let compiler_args = system('get-compiler-args '.expand('%:p'))
-    let func_name = system('get-current-function '.expand('%:p').' '.line('.').' '.col('.').' '.compiler_args)
-    " Strip newlines.
-    echo substitute(func_name, '\n\+$', '', '')
+    let info = libclang#deduction#current_function_at(expand('%:p'), line('.'), col('.'), compiler_args)
+    echo info.name
 endfun
 map <silent>f :call ShowFuncName() <CR>
