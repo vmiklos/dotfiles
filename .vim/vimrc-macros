@@ -128,8 +128,7 @@ set clipboard=exclude:.*
 set exrc
 set secure
 
-" Minimal version of <https://github.com/rhysd/clang-type-inspector.vim>, so
-" you need only <https://github.com/rhysd/libclang-vim>.
+" Client code for <https://github.com/libclang-vim/libclang-vim>.
 fun! ClangInspectType()
     " If you don't have get-compiler-args and just want to try this out, use: system('echo -std=c++1y')
     let compiler_args = system('get-compiler-args '.expand('%:p'))
