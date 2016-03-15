@@ -136,7 +136,7 @@ fun! ShowFuncName()
 endfun
 map <silent>f :call ShowFuncName() <CR>
 
-" Code completion PoC, currently just returns foo and bar all the time.
+" Code completion PoC.
 function! ClangComplete(findstart, base)
     if a:findstart == 1
         " In findstart mode, look for the beginning of the current identifier.
@@ -152,7 +152,9 @@ function! ClangComplete(findstart, base)
     let l:l = line('.')
     let l:c = col('.')
 
-    let l:matches = ['foo', 'bar']
+    "let l:matches = ['foo', 'bar']
+    let compiler_args = system('get-compiler-args '.expand('%:p'))
+    let l:matches = split(system('get-completion-at '.expand('%:p').' '.line('.').' '.col('.').' '.compiler_args), "\n")
 
     " Filter out matches that do not match the prefix we got.
     let l:ret = l:matches
