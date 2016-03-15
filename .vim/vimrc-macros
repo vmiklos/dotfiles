@@ -110,16 +110,6 @@ except ImportError:
     vim.command('let g:skip_xpath = 1')
 EOF
 
-" omnicompletecpp
-" close automatically the preview window after a completion
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-" do not run automatically a completion after a '.' or '->'
-let OmniCpp_MayCompleteDot = 0
-let OmniCpp_MayCompleteArrow = 0
-" avoid preview window; default would be menu,preview
-set completeopt=menu
-
 " Avoid e.g. the selection created by V automatically end up on the primary
 " clipboard.
 set clipboard=exclude:.*
