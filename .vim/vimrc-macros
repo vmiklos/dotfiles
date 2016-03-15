@@ -135,3 +135,38 @@ fun! ShowFuncName()
     echo info.name
 endfun
 map <silent>f :call ShowFuncName() <CR>
+
+" Code completion PoC, currently just returns foo and bar all the time.
+function! ClangComplete(findstart, base)
+    if a:findstart == 1
+        " In findstart mode, look for the beginning of the current identifier.
+        let l:line = getline('.')
+        let l:start = col('.') - 1
+        while l:start > 0 && l:line[l:start - 1] =~ '\i'
+            let l:start -= 1
+        endwhile
+        return l:start
+    endif
+
+    " Get the current line and column numbers.
+    let l:l = line('.')
+    let l:c = col('.')
+
+    let l:matches = ['foo', 'bar']
+
+    " Filter out matches that do not match the prefix we got.
+    let l:ret = l:matches
+    if a:base != ""
+        let l:ret = []
+        for l:match in l:matches
+            if l:match[:strlen(a:base)-1] == a:base
+                let l:ret = l:ret + [l:match]
+            endif
+        endfor
+    endif
+
+    return {'words': l:ret, 'refresh': 'always'}
+endfunction ClangComplete
+autocmd FileType cpp set omnifunc=ClangComplete
+
+" vim:set shiftwidth=4 softtabstop=4 expandtab:
