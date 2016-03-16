@@ -122,7 +122,12 @@ set secure
 fun! ClangInspectType()
     " If you don't have get-compiler-args and just want to try this out, use: system('echo -std=c++1y')
     let compiler_args = system('get-compiler-args '.expand('%:p'))
-    let type_info = libclang#deduction#type_at(expand('%:p'), line('.'), col('.'), compiler_args)
+    let temp_name = tempname() . (&filetype==#'c' ? '.c' : '.cpp')
+    if writefile(getbufline(bufnr('%'), 1, '$'), temp_name) == -1
+        throw "Could not create a temporary file : ".temp_name
+    endif
+    let type_info = libclang#deduction#type_at(temp_name, line('.'), col('.'), compiler_args)
+    call delete(temp_name)
     " Use '.canonical.type' instead of '.type' if you want e.g.
     " 'std::basic_string<char>', not std::string.
     echo type_info.type
@@ -131,7 +136,12 @@ map <silent><C-i> :call ClangInspectType() <CR>
 
 fun! ShowFuncName()
     let compiler_args = system('get-compiler-args '.expand('%:p'))
-    let info = libclang#deduction#current_function_at(expand('%:p'), line('.'), col('.'), compiler_args)
+    let temp_name = tempname() . (&filetype==#'c' ? '.c' : '.cpp')
+    if writefile(getbufline(bufnr('%'), 1, '$'), temp_name) == -1
+        throw "Could not create a temporary file : ".temp_name
+    endif
+    let info = libclang#deduction#current_function_at(temp_name, line('.'), col('.'), compiler_args)
+    call delete(temp_name)
     echo info.name
 endfun
 map <silent>f :call ShowFuncName() <CR>
@@ -152,9 +162,15 @@ function! ClangComplete(findstart, base)
     let l:l = line('.')
     let l:c = col('.')
 
-    "let l:matches = ['foo', 'bar']
     let compiler_args = system('get-compiler-args '.expand('%:p'))
-    let l:matches = split(system('get-completion-at '.expand('%:p').' '.line('.').' '.col('.').' '.compiler_args), "\n")
+
+    let temp_name = tempname() . (&filetype==#'c' ? '.c' : '.cpp')
+    if writefile(getbufline(bufnr('%'), 1, '$'), temp_name) == -1
+        throw "Could not create a temporary file : ".temp_name
+    endif
+
+    let l:matches = split(system('get-completion-at '.temp_name.' '.line('.').' '.col('.').' '.compiler_args), "\n")
+    call delete(temp_name)
 
     " Filter out matches that do not match the prefix we got.
     let l:ret = l:matches
