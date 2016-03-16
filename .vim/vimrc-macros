@@ -186,5 +186,7 @@ function! ClangComplete(findstart, base)
     return {'words': l:ret, 'refresh': 'always'}
 endfunction ClangComplete
 autocmd FileType cpp set omnifunc=ClangComplete
+" Map Ctrl-Space to Ctrl-X Ctrl-O
+imap <C-@> <C-x><C-o>
 
 " vim:set shiftwidth=4 softtabstop=4 expandtab:
