@@ -37,6 +37,8 @@ export MAN_POSIXLY_CORRECT=1
 
 # ccache with Clang without CCACHE_CPP2 set causes spurious warnings
 export CCACHE_CPP2=1
+# LibreOffice: avoid gtk3 for now.
+export SAL_USE_VCLPLUGIN=gtk
 
 # Make cupsdoprint work out of the box.
 export PRINTER="hp-p1566"
