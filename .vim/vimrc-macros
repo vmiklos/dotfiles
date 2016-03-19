@@ -183,7 +183,7 @@ function! ClangComplete(findstart, base)
         endfor
     endif
 
-    return {'words': l:ret, 'refresh': 'always'}
+    return l:ret
 endfunction ClangComplete
 autocmd FileType cpp set omnifunc=ClangComplete
 " Map Ctrl-Space to Ctrl-X Ctrl-O
