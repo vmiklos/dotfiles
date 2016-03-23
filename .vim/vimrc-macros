@@ -146,7 +146,6 @@ fun! ClangShowFunc()
 endfun
 map <silent>f :call ClangShowFunc() <CR>
 
-" Code completion PoC.
 function! ClangComplete(findstart, base)
     if a:findstart == 1
         " In findstart mode, look for the beginning of the current identifier.
@@ -169,7 +168,7 @@ function! ClangComplete(findstart, base)
         throw "Could not create a temporary file : ".temp_name
     endif
 
-    let l:matches = split(system('get-completion-at '.temp_name.' '.line('.').' '.col('.').' '.compiler_args), "\n")
+    let l:matches = libclang#deduction#completion_at(temp_name, line('.'), col('.'), compiler_args)
     call delete(temp_name)
 
     " Filter out matches that do not match the prefix we got.
