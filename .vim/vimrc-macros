@@ -120,8 +120,7 @@ set secure
 
 " Client code for <https://github.com/libclang-vim/libclang-vim>.
 fun! ClangInspectType()
-    " If you don't have get-compiler-args and just want to try this out, use: system('echo -std=c++1y')
-    let compiler_args = system('get-compiler-args '.expand('%:p'))
+    let compiler_args = 'database,'.expand('%:p')
     let temp_name = tempname() . (&filetype==#'c' ? '.c' : '.cpp')
     if writefile(getbufline(bufnr('%'), 1, '$'), temp_name) == -1
         throw "Could not create a temporary file : ".temp_name
@@ -135,7 +134,7 @@ endfun
 map <silent><C-i> :call ClangInspectType() <CR>
 
 fun! ClangShowFunc()
-    let compiler_args = system('get-compiler-args '.expand('%:p'))
+    let compiler_args = 'database,'.expand('%:p')
     let temp_name = tempname() . (&filetype==#'c' ? '.c' : '.cpp')
     if writefile(getbufline(bufnr('%'), 1, '$'), temp_name) == -1
         throw "Could not create a temporary file : ".temp_name
@@ -161,7 +160,7 @@ function! ClangComplete(findstart, base)
     let l:l = line('.')
     let l:c = col('.')
 
-    let compiler_args = system('get-compiler-args '.expand('%:p'))
+    let compiler_args = 'database,'.expand('%:p')
 
     let temp_name = tempname() . (&filetype==#'c' ? '.c' : '.cpp')
     if writefile(getbufline(bufnr('%'), 1, '$'), temp_name) == -1
