@@ -120,12 +120,12 @@ set secure
 
 " Client code for <https://github.com/libclang-vim/libclang-vim>.
 fun! ClangInspectType()
-    let compiler_args = 'database,'.expand('%:p')
+    let compiler_args = libclang#deduction#compile_commands(expand('%:p'))
     let temp_name = tempname() . (&filetype==#'c' ? '.c' : '.cpp')
     if writefile(getbufline(bufnr('%'), 1, '$'), temp_name) == -1
         throw "Could not create a temporary file : ".temp_name
     endif
-    let type_info = libclang#deduction#type_at(temp_name, line('.'), col('.'), compiler_args)
+    let type_info = libclang#deduction#type_at(temp_name, line('.'), col('.'), compiler_args.commands)
     call delete(temp_name)
     " Use '.canonical.type' instead of '.type' if you want e.g.
     " 'std::basic_string<char>', not std::string.
@@ -134,12 +134,12 @@ endfun
 map <silent>Ci :call ClangInspectType() <CR>
 
 fun! ClangShowFunc()
-    let compiler_args = 'database,'.expand('%:p')
+    let compiler_args = libclang#deduction#compile_commands(expand('%:p'))
     let temp_name = tempname() . (&filetype==#'c' ? '.c' : '.cpp')
     if writefile(getbufline(bufnr('%'), 1, '$'), temp_name) == -1
         throw "Could not create a temporary file : ".temp_name
     endif
-    let info = libclang#deduction#current_function_at(temp_name, line('.'), col('.'), compiler_args)
+    let info = libclang#deduction#current_function_at(temp_name, line('.'), col('.'), compiler_args.commands)
     call delete(temp_name)
     echo info.name
 endfun
@@ -160,14 +160,14 @@ function! ClangComplete(findstart, base)
     let l:l = line('.')
     let l:c = col('.')
 
-    let compiler_args = 'database,'.expand('%:p')
+    let compiler_args = libclang#deduction#compile_commands(expand('%:p'))
 
     let temp_name = tempname() . (&filetype==#'c' ? '.c' : '.cpp')
     if writefile(getbufline(bufnr('%'), 1, '$'), temp_name) == -1
         throw "Could not create a temporary file : ".temp_name
     endif
 
-    let l:matches = libclang#deduction#completion_at(temp_name, line('.'), col('.'), compiler_args)
+    let l:matches = libclang#deduction#completion_at(temp_name, line('.'), col('.'), compiler_args.commands)
     call delete(temp_name)
 
     " Filter out matches that do not match the prefix we got.
