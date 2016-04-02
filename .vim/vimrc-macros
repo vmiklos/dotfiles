@@ -131,7 +131,7 @@ fun! ClangInspectType()
     " 'std::basic_string<char>', not std::string.
     echo type_info.type
 endfun
-map <silent><C-i> :call ClangInspectType() <CR>
+map <silent>Ci :call ClangInspectType() <CR>
 
 fun! ClangShowFunc()
     let compiler_args = 'database,'.expand('%:p')
@@ -143,7 +143,7 @@ fun! ClangShowFunc()
     call delete(temp_name)
     echo info.name
 endfun
-map <silent>f :call ClangShowFunc() <CR>
+map <silent>Cf :call ClangShowFunc() <CR>
 
 function! ClangComplete(findstart, base)
     if a:findstart == 1
