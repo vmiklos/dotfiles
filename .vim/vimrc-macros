@@ -1,22 +1,13 @@
-"" vundle: git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
-"Plugin 'gmarik/vundle'
-" https://github.com/Valloric/YouCompleteMe is also interesting, but too much automagic (for me at least)
 call pathogen#runtime_append_all_bundles()
 
-""set encoding=latin2
 set encoding=utf8
 " 4 spaces instead of tabs style spacing
 map <F4> <Esc>:set shiftwidth=4<CR>:set softtabstop=4<CR>:set expandtab<CR>
 map <F5> <Esc>:setlocal spell spelllang=en_us<CR>
 map <F6> <Esc>:setlocal spell spelllang=hu<CR>
 map <F7> <Esc>:setlocal nospell<CR>
-" handle utf8 files
-""map <F8> :set termencoding=iso8859-2<CR>:set encoding=utf8<CR>
+" View utf8 files as if they would be iso-8859-2 ones.
 map <F8> :set termencoding=utf8<CR>:set encoding=latin2<CR>
-" gq should use 72 so that quoted mails are readable on normal terminals
-"set tw=72
 set formatoptions -=t
 au BufNewFile,BufReadPost,BufEnter *.ly so /usr/share/lilypond/2.12.1/vim/syntax/lilypond.vim
 set pastetoggle=<F9>
@@ -30,39 +21,8 @@ au BufNewFile,BufRead *.swg set filetype=swig
 imap <C-F> <ESC>:r!gcontacts -q -t <cword><CR>
 map <F11> :set ff=unix<CR>:% !prettyprint<CR>
 
-fun AddTodo()
-    " search backwards for our magic regex that works most of the time
-    let flags = "bn"
-    let fNum = search('^\w\+\s\+\w\+.*\n*\s*[(){:].*[,)]*\s*$', flags)
-    " if we're in a python file, search backwards for the most recent def: or
-    " class: declaration
-    if match(expand("%:t"), ".py") != -1
-        let dNum = search('^\s\+def\s*.*:\s*$', flags)
-        let cNum = search('^\s*class\s.*:\s*$', flags)
-        if dNum > cNum
-            let fNum = dNum
-        else
-            let fNum = cNum
-        endif
-    endif
-
-    "paste the matching line into a variable to display
-    let tempstring = getline(fNum)
-    let items = split(tempstring, '(')
-    let items2 = split(items[0], ' ')
-
-    "return the line that we found to be the function name
-    execute "normal a \<BS>". "\nprintf(\"debug, TODO: " . items2[1] . "\\n\");"
-endfun
-
-command Todo call AddTodo()
-
 command XPath XPathSearchPrompt
 
-fun AddTrace()
-    execute "normal a \<BS>". "\nOSL_TRACE(\"TODO: %s\", __PRETTY_FUNCTION__);"
-endfun
-"map <F10> :call AddTrace()<CR>
 " Print full path + line number that can be copy&pasted easily.
 " See <http://vim.wikia.com/wiki/Get_the_name_of_the_current_file>.
 map <F10> :echo expand('%:p').':'.line('.')<CR>
@@ -71,7 +31,6 @@ au BufReadCmd *.docx,*.docm,*.dotx,*.dotm,*.xlsx,*.pptx,*.vsdx,*.apk call zip#Br
 au BufReadCmd *.odt,*.odm,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt,*.odb call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.sxw call zip#Browse(expand("<amatch>"))
 au BufReadCmd *.k3b call zip#Browse(expand("<amatch>"))
-"au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 " vim -b : edit binary using xxd-format!
 augroup Binary
