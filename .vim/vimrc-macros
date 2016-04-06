@@ -81,10 +81,11 @@ set secure
 if filereadable($HOME . "/.vim/bundle/libclang-vim/documentation/examples.vim")
         source $HOME/.vim/bundle/libclang-vim/documentation/examples.vim
 endif
-autocmd FileType cpp map <silent>Ci :call ClangInspectType() <CR>
-autocmd FileType cpp map <silent>Cf :call ClangInspectFunction() <CR>
+autocmd FileType cpp nnoremap <silent>Ci :call ClangInspectType() <CR>
+autocmd FileType cpp nnoremap <silent>Cf :call ClangInspectFunction() <CR>
+autocmd FileType cpp nnoremap <silent>Cr :call ClangRename() <CR>
 autocmd FileType cpp set omnifunc=ClangInspectCompletion
 " Map Ctrl-Space to Ctrl-X Ctrl-O
-imap <C-@> <C-x><C-o>
+inoremap <C-@> <C-x><C-o>
 
 " vim:set shiftwidth=4 softtabstop=4 expandtab:
