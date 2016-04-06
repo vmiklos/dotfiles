@@ -5,5 +5,7 @@ account = IMAP {
 	username = 'vmiklos',
 	ssl = 'tls1'
 }
+results = account['INBOX']:is_older(90)
+results:move_messages(account['ZArchive'])
 results = account['Lists.libreoffice']:is_older(90)
 results:delete_messages()
