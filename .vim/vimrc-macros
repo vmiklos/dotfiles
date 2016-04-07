@@ -77,13 +77,16 @@ set clipboard=exclude:.*
 set exrc
 set secure
 
+" :help leader
+let mapleader = ","
+
 " Client code for <https://github.com/libclang-vim/libclang-vim>.
 if filereadable($HOME . "/.vim/bundle/libclang-vim/documentation/examples.vim")
         source $HOME/.vim/bundle/libclang-vim/documentation/examples.vim
 endif
-autocmd FileType cpp nnoremap <silent>Ci :call ClangInspectType() <CR>
-autocmd FileType cpp nnoremap <silent>Cf :call ClangInspectFunction() <CR>
-autocmd FileType cpp nnoremap <silent>Cr :call ClangRename() <CR>
+autocmd FileType cpp nnoremap <silent><leader>cf :call ClangInspectFunction()<cr>
+autocmd FileType cpp nnoremap <silent><leader>ci :call ClangInspectType()<cr>
+autocmd FileType cpp nnoremap <silent><leader>cr :call ClangRename()<cr>
 autocmd FileType cpp set omnifunc=ClangInspectCompletion
 " Map Ctrl-Space to Ctrl-X Ctrl-O
 inoremap <C-@> <C-x><C-o>
