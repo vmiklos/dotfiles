@@ -69,8 +69,8 @@ augroup Swig
     autocmd!
     autocmd BufRead */swig*/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2 | set expandtab " SWIG
     autocmd BufRead */swig*/Source/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2 | set noexpandtab " SWIG Source
-    autocmd BufNewFile,BufRead *.i set filetype=swig 
-    autocmd BufNewFile,BufRead *.swg set filetype=swig 
+    autocmd BufNewFile,BufRead *.i set filetype=swig
+    autocmd BufNewFile,BufRead *.swg set filetype=swig
 augroup END
 
 augroup Zip
