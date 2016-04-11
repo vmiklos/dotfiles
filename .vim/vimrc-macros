@@ -1,74 +1,22 @@
+" Basic Settings
+
 call pathogen#runtime_append_all_bundles()
-
 set encoding=utf8
-" 4 spaces instead of tabs style spacing
-noremap <F4> <Esc>:set shiftwidth=4<CR>:set softtabstop=4<CR>:set expandtab<CR>
-noremap <F5> <Esc>:setlocal spell spelllang=en_us<CR>
-noremap <F6> <Esc>:setlocal spell spelllang=hu<CR>
-noremap <F7> <Esc>:setlocal nospell<CR>
-" View utf8 files as if they would be iso-8859-2 ones.
-noremap <F8> :set termencoding=utf8<CR>:set encoding=latin2<CR>
+" No auto-wrap text using textwidth.
 set formatoptions -=t
-augroup Ly
-    au!
-    au BufNewFile,BufReadPost,BufEnter *.ly so /usr/share/lilypond/2.12.1/vim/syntax/lilypond.vim
-augroup END
-set pastetoggle=<F9>
+" When a bracket is inserted, don't jump briefly to the matching one.
 set noshowmatch
-
-augroup Swig
-    au!
-    au BufRead */swig*/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2 | set expandtab " SWIG
-    au BufRead */swig*/Source/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2 | set noexpandtab " SWIG Source
-    au BufNewFile,BufRead *.i set filetype=swig 
-    au BufNewFile,BufRead *.swg set filetype=swig 
-augroup END
-
-inoremap <C-F> <ESC>:r!gcontacts -q -t <cword><CR>
-noremap <F11> :set ff=unix<CR>:% !prettyprint<CR>
-
-command XPath XPathSearchPrompt
-
-" Print full path + line number that can be copy&pasted easily.
-" See <http://vim.wikia.com/wiki/Get_the_name_of_the_current_file>.
-noremap <F10> :echo expand('%:p').':'.line('.')<CR>
-
-augroup Zip
-    au!
-    au BufReadCmd *.docx,*.docm,*.dotx,*.dotm,*.xlsx,*.pptx,*.vsdx,*.apk call zip#Browse(expand("<amatch>"))
-    au BufReadCmd *.odt,*.odm,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt,*.odb call zip#Browse(expand("<amatch>"))
-    au BufReadCmd *.sxw call zip#Browse(expand("<amatch>"))
-    au BufReadCmd *.k3b call zip#Browse(expand("<amatch>"))
-augroup END
-
-" vim -b : edit binary using xxd-format!
-augroup Binary
-    au!
-    au BufReadPre  *.bin let &bin=1
-    au BufReadPost *.bin if &bin | %!xxd
-    au BufReadPost *.bin set ft=xxd | endif
-    au BufWritePre *.bin if &bin | %!xxd -r
-    au BufWritePre *.bin endif
-    au BufWritePost *.bin if &bin | %!xxd
-    au BufWritePost *.bin set nomod | endif
-augroup END
-
 " Look in the current directory for "tags", and work up the tree towards root
 " until one is found.
 set tags=./tags;/
-
 source $VIMRUNTIME/macros/matchit.vim
-
 set maxmempattern=2000
-
 " Fine-tune completion: make it bash-like.
 set wildmenu
 set wildmode=longest,list
-
 " No indent after namespaces + automatically indent lines inside parentheses.
 " http://orchistro.tistory.com/236
 set cinoptions=N-s,(0,:0
-
 " auto-disable xpath if necessary
 py << EOF
 import vim
@@ -77,29 +25,78 @@ try:
 except ImportError:
     vim.command('let g:skip_xpath = 1')
 EOF
-
 " Avoid e.g. the selection created by V automatically end up on the primary
 " clipboard.
 set clipboard=exclude:.*
-
 " http://andrew.stwrt.ca/posts/project-specific-vimrc/
 set exrc
 set secure
-
 " :help leader
 let mapleader = ","
-
 " Client code for <https://github.com/libclang-vim/libclang-vim>.
 if filereadable($HOME . "/.vim/bundle/libclang-vim/documentation/examples.vim")
         source $HOME/.vim/bundle/libclang-vim/documentation/examples.vim
 endif
+
+" FileType-specific settings
+
+" vim -b : edit binary using xxd-format!
+augroup Binary
+    autocmd!
+    autocmd BufReadPre  *.bin let &bin=1
+    autocmd BufReadPost *.bin if &bin | %!xxd
+    autocmd BufReadPost *.bin set ft=xxd | endif
+    autocmd BufWritePre *.bin if &bin | %!xxd -r
+    autocmd BufWritePre *.bin endif
+    autocmd BufWritePost *.bin if &bin | %!xxd
+    autocmd BufWritePost *.bin set nomod | endif
+augroup END
+
 augroup Cpp
-    au!
+    autocmd!
     autocmd FileType cpp nnoremap <silent><leader>cf :call ClangInspectFunction()<cr>
     autocmd FileType cpp nnoremap <silent><leader>ci :call ClangInspectType()<cr>
     autocmd FileType cpp nnoremap <silent><leader>cr :call ClangRename()<cr>
     autocmd FileType cpp set omnifunc=ClangInspectCompletion
 augroup END
+
+augroup Ly
+    autocmd!
+    autocmd BufNewFile,BufReadPost,BufEnter *.ly so /usr/share/lilypond/2.12.1/vim/syntax/lilypond.vim
+augroup END
+
+augroup Swig
+    autocmd!
+    autocmd BufRead */swig*/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2 | set expandtab " SWIG
+    autocmd BufRead */swig*/Source/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2 | set noexpandtab " SWIG Source
+    autocmd BufNewFile,BufRead *.i set filetype=swig 
+    autocmd BufNewFile,BufRead *.swg set filetype=swig 
+augroup END
+
+augroup Zip
+    autocmd!
+    autocmd BufReadCmd *.docx,*.docm,*.dotx,*.dotm,*.xlsx,*.pptx,*.vsdx,*.apk call zip#Browse(expand("<amatch>"))
+    autocmd BufReadCmd *.odt,*.odm,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt,*.odb call zip#Browse(expand("<amatch>"))
+    autocmd BufReadCmd *.sxw call zip#Browse(expand("<amatch>"))
+    autocmd BufReadCmd *.k3b call zip#Browse(expand("<amatch>"))
+augroup END
+
+" Mappings
+
+" 4 spaces instead of tabs style spacing
+noremap <F4> <Esc>:set shiftwidth=4<CR>:set softtabstop=4<CR>:set expandtab<CR>
+noremap <F5> <Esc>:setlocal spell spelllang=en_us<CR>
+noremap <F6> <Esc>:setlocal spell spelllang=hu<CR>
+noremap <F7> <Esc>:setlocal nospell<CR>
+" View utf8 files as if they would be iso-8859-2 ones.
+noremap <F8> :set termencoding=utf8<CR>:set encoding=latin2<CR>
+set pastetoggle=<F9>
+" Print full path + line number that can be copy&pasted easily.
+" See <http://vim.wikia.com/wiki/Get_the_name_of_the_current_file>.
+noremap <F10> :echo expand('%:p').':'.line('.')<CR>
+noremap <F11> :set ff=unix<CR>:% !prettyprint<CR>
+inoremap <C-F> <ESC>:r!gcontacts -q -t <cword><CR>
+command XPath XPathSearchPrompt
 " Map Ctrl-Space to Ctrl-X Ctrl-O
 inoremap <C-@> <C-x><C-o>
 
