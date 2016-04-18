@@ -54,6 +54,8 @@ augroup END
 
 augroup Cpp
     autocmd!
+    autocmd FileType cpp nnoremap <silent><leader>cc :call ClangInspectComment()<cr>
+    autocmd FileType cpp nnoremap <silent><leader>cd :call ClangJumpDeclaration()<cr>
     autocmd FileType cpp nnoremap <silent><leader>cf :call ClangInspectFunction()<cr>
     autocmd FileType cpp nnoremap <silent><leader>ci :call ClangInspectType()<cr>
     autocmd FileType cpp nnoremap <silent><leader>cr :call ClangRename()<cr>
