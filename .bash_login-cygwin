@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export PATH=/opt/lo/bin:$PATH
+alias vi="vim"
+settitle()
+{
+	PS1='\[\e]0;'$1'\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
+}
