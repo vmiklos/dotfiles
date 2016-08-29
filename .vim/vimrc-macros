@@ -57,6 +57,7 @@ augroup Cpp
     autocmd FileType cpp nnoremap <silent><leader>cc :call ClangInspectComment()<cr>
     autocmd FileType cpp nnoremap <silent><leader>cd :call ClangJumpDeclaration()<cr>
     autocmd FileType cpp nnoremap <silent><leader>cf :call ClangInspectFunction()<cr>
+    autocmd FileType cpp nnoremap <silent><leader>cn :call ClangInspectName()<cr>
     autocmd FileType cpp nnoremap <silent><leader>ci :call ClangJumpInclude()<cr>
     autocmd FileType cpp nnoremap <silent><leader>cr :pyf $HOME/git/llvm/tools/clang/tools/extra/clang-rename/tool/clang-rename.py<cr>
     autocmd FileType cpp nnoremap <silent><leader>ct :call ClangInspectType()<cr>
