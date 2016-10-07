@@ -46,3 +46,5 @@ alias screen="screen -DR"
 
 # Find out what's the last pushed daily build.
 alias daily="ssh dev-downloads \"sh -c 'cd /srv/git/lo-linux-dbgutil-daily.git; git log -1'\""
+
+export PATH=$HOME/.local/bin:$PATH
