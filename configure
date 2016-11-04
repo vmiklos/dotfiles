@@ -4,6 +4,8 @@ echo "creating .mutt/accounts/10gmail.conf"
 m4 -DPASSWORD="$(sudo ~/bin/cpm --quiet googleapps.*vmiklos.hu)" .mutt/accounts/10gmail.conf.m4 > .mutt/accounts/10gmail.conf
 echo "creating .mutt/accounts/15collabora.conf"
 m4 -DCPPASSWORD="$(sudo ~/bin/cpm --quiet ldap.*collabora.com)" .mutt/accounts/15collabora.conf.m4 > .mutt/accounts/15collabora.conf
+echo "creating .msmtprc"
+m4 -DPASSWORD="$(sudo ~/bin/cpm --quiet ldap.*collabora.com)" .msmtprc.m4 > .msmtprc
 echo "creating .linphonerc"
 m4 -DVOIPSUSEDEPASSWORD="$(sudo ~/bin/cpm --quiet sip.*suse.de)" .linphonerc.m4 > .linphonerc
 echo "creating .oscrc"
