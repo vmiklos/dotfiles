@@ -1,7 +1,6 @@
 $ zypper lr -u|sed 's/^.\{5\}//'
 Alias                     | Name                                    | Enabled | GPG Check | Refresh | URI
 --------------------------+-----------------------------------------+---------+-----------+---------+----------------------------------------------------------------------------
-google-earth              | google-earth                            | Yes     | ( p) Yes  | Yes     | http://dl.google.com/linux/earth/rpm/stable/x86_64
 google-talkplugin         | google-talkplugin                       | Yes     | ( p) Yes  | Yes     | http://dl.google.com/linux/talkplugin/rpm/stable/x86_64
 home-vmiklos              | home-vmiklos                            | Yes     | (r ) Yes  | No      | http://download.opensuse.org/repositories/home:/vmiklos/openSUSE_Leap_42.1/
 packman                   | packman                                 | Yes     | (r ) Yes  | No      | http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_42.1/
