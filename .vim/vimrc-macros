@@ -104,4 +104,9 @@ command XPath XPathSearchPrompt
 " Map Ctrl-Space to Ctrl-X Ctrl-O
 inoremap <C-@> <C-x><C-o>
 
+function! FileOffset()
+    return line2byte(line('.')) + col('.') - 1
+endfunction
+nnoremap <silent><leader>fo :echo FileOffset()<cr>
+
 " vim:set shiftwidth=4 softtabstop=4 expandtab:
