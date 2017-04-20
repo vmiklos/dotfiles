@@ -121,6 +121,9 @@ inoremap <C-F> <ESC>:r!gcontacts -q -t <cword><CR>
 command XPath XPathSearchPrompt
 " Map Ctrl-Space to Ctrl-X Ctrl-O
 inoremap <C-@> <C-x><C-o>
+" Allow acception a suggestion with <CR>, from
+" <https://github.com/Valloric/YouCompleteMe/issues/1282#issuecomment-228254509>.
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>\<ESC>a" : "\<CR>"
 
 function! FileOffset()
     return line2byte(line('.')) + col('.') - 1
