@@ -54,14 +54,14 @@ augroup END
 
 augroup Cpp
     autocmd!
-    "autocmd FileType cpp nnoremap <silent><leader>cc :call ClangInspectComment()<cr>
-    "autocmd FileType cpp nnoremap <silent><leader>cd :call ClangJumpDeclaration()<cr>
+    autocmd FileType cpp nnoremap <silent><leader>cc :call ClangInspectComment()<cr>
+    autocmd FileType cpp nnoremap <silent><leader>cd :call ClangJumpDeclaration()<cr>
     autocmd FileType cpp nnoremap <silent><leader>cf :call ClangInspectFunction()<cr>
     autocmd FileType cpp nnoremap <silent><leader>cn :call ClangInspectName()<cr>
-    "autocmd FileType cpp nnoremap <silent><leader>ci :call ClangJumpInclude()<cr>
+    autocmd FileType cpp nnoremap <silent><leader>ci :call ClangJumpInclude()<cr>
     autocmd FileType cpp nnoremap <silent><leader>cr :pyf $HOME/git/llvm/tools/clang/tools/extra/clang-rename/tool/clang-rename.py<cr>
     autocmd FileType cpp nnoremap <silent><leader>ct :call ClangInspectType()<cr>
-    "autocmd FileType cpp set omnifunc=ClangInspectCompletion
+    autocmd FileType cpp set omnifunc=ClangInspectCompletion
 
     " YCM setup:
     " git clone https://github.com/Valloric/YouCompleteMe.git
@@ -77,9 +77,9 @@ augroup Cpp
     " Auto-close the auto-opened preview window.
     let g:ycm_autoclose_preview_window_after_completion = 1
     " YCM key bindings
-    autocmd FileType cpp nnoremap <silent><leader>cc :YcmCompleter GetDoc<cr>
-    autocmd FileType cpp nnoremap <silent><leader>cd :YcmCompleter GoToDeclaration<cr>
-    autocmd FileType cpp nnoremap <silent><leader>ci :YcmCompleter GoToInclude<cr>
+    "autocmd FileType cpp nnoremap <silent><leader>cc :YcmCompleter GetDoc<cr>
+    "autocmd FileType cpp nnoremap <silent><leader>cd :YcmCompleter GoToDeclaration<cr>
+    "autocmd FileType cpp nnoremap <silent><leader>ci :YcmCompleter GoToInclude<cr>
 augroup END
 
 augroup Ly
