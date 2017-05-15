@@ -10,7 +10,5 @@ echo "creating .linphonerc"
 m4 -DVOIPSUSEDEPASSWORD="$(sudo ~/bin/cpm --quiet sip.*suse.de)" .linphonerc.m4 > .linphonerc
 echo "creating .oscrc"
 m4 -DNOVELLEXTERNALPASSWORD="$(sudo ~/bin/cpm --quiet http.*external.*novell.com)" .oscrc.m4 > .oscrc
-echo "creating .goobookrc"
-m4 -DPASSWORD="$(sudo ~/bin/cpm --quiet googleapps.*vmiklos.hu)" .goobookrc.m4 > .goobookrc
 echo "creating .offlineimaprc"
 m4 -DPASSWORD="$(sudo ~/bin/cpm --quiet googleapps.*vmiklos.hu)" .offlineimaprc.m4 > .offlineimaprc
