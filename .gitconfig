@@ -14,10 +14,10 @@
 [http]
 	cookiefile = /home/vmiklos/.gitcookies
 [transfer]
-        fsckobjects = true
+	#fsckobjects = true
 [fetch]
-        fsckobjects = true
+	#fsckobjects = true
 [receive]
-        fsckObjects = true
+	#fsckObjects = true
 [gc]
 	autoDetach = false
