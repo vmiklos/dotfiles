@@ -86,29 +86,11 @@ augroup Cpp
     autocmd FileType cpp nnoremap <silent><leader>cr :pyf $HOME/git/llvm/tools/clang/tools/extra/clang-rename/tool/clang-rename.py<cr>
 augroup END
 
-" Completion wrapper around gcontacts from vmexam.git.
-function! MuttContactsCompletion(findstart, base)
-    if a:findstart == 1
-        " In findstart mode, look for the beginning of the current identifier
-        let l:line = getline('.')
-        let l:start = col('.') - 1
-        while l:start > 0 && l:line[l:start - 1] =~ '\i'
-            let l:start -= 1
-        endwhile
-        return l:start
-    endif
-
-    let l:ret = []
-
-    if a:base != ""
-        let l:ret = systemlist("gcontacts -q -t " .  shellescape(a:base))
-    endif
-
-    return l:ret
-endfunction
-
 augroup Mutt
     autocmd!
+    if filereadable($HOME . "/git/vmexam/gcontacts/gcontacts.vim")
+            source $HOME/git/vmexam/gcontacts/gcontacts.vim
+    endif
     autocmd Filetype mail set omnifunc=MuttContactsCompletion
 augroup END
 
