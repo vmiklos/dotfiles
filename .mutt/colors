@@ -15,7 +15,6 @@ color signature	 yellow		default	# signature
 color indicator	 black		cyan	# actual message
 color error	 brightred	default	# errors
 color status	 brightyellow	blue	# status line
-color sidebar	 white		black	# border of the sidebar
 color tree	 magenta	default	# thread arrows
 color tilde	 magenta	default	# ~ at bottom of msg
 color message	 brightcyan	default	# info messages
