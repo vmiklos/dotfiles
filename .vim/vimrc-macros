@@ -112,7 +112,7 @@ augroup Zip
     autocmd BufReadCmd *.docx,*.docm,*.dotx,*.dotm,*.xlsx,*.pptx,*.vsdx,*.apk call zip#Browse(expand("<amatch>"))
     autocmd BufReadCmd *.odt,*.odm,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt,*.odb call zip#Browse(expand("<amatch>"))
     autocmd BufReadCmd *.sxw call zip#Browse(expand("<amatch>"))
-    autocmd BufReadCmd *.k3b,*.egg call zip#Browse(expand("<amatch>"))
+    autocmd BufReadCmd *.k3b,*.egg,*.epub call zip#Browse(expand("<amatch>"))
 augroup END
 
 " Mappings
@@ -130,6 +130,7 @@ set pastetoggle=<F9>
 noremap <F10> :echo expand('%:p').':'.line('.')<CR>
 noremap <F11> :set ff=unix<CR>:% !prettyprint<CR>
 command XPath XPathSearchPrompt
+command GotoRandom pyf $HOME/git/vmexam/vim/goto-random.py
 " Map Ctrl-Space to Ctrl-X Ctrl-O
 inoremap <C-@> <C-x><C-o>
 " Allow acception a suggestion with <CR>, from
