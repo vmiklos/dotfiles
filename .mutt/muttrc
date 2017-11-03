@@ -72,6 +72,7 @@ set pager_index_lines=9
 set sidebar_visible="yes"
 set sidebar_width=40
 set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
+set sidebar_short_path="yes"
 #set shorten_hierarchy
 color sidebar_new yellow default
 
