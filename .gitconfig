@@ -21,3 +21,5 @@
 	#fsckObjects = true
 [gc]
 	autoDetach = false
+[fetch]
+	prune = true

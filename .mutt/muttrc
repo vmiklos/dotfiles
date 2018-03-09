@@ -76,6 +76,7 @@ set sidebar_short_path="yes"
 #set shorten_hierarchy
 color sidebar_new yellow default
 
+# Like search, but hide non-matching mails. Ctrl-l, then "all" switches back.
 bind index \cl limit
 bind index l sidebar-open
 macro index P "<enter-command>unmailboxes `python ~/.mutt/mailboxes.py --big`<enter>"

@@ -179,7 +179,6 @@
         show_thumbnails = "false" 
         show_directory_date = "false" 
         home_path = "" 
-        last_path = "/home/vmiklos/mnt/plug/kepek/osm/2017-05-23" 
         startup_path = "0" 
         exit_on_close = "false" 
 
