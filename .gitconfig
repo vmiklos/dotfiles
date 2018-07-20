@@ -23,3 +23,5 @@
 	autoDetach = false
 [fetch]
 	prune = true
+[interactive]
+	singleKey = true
