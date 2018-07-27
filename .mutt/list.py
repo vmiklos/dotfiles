@@ -69,6 +69,10 @@ if __name__ == "__main__":
         if i.strip('"') == "INBOX":
             sys.stdout.write('"imaps://%s/%s" ' % (url, i.strip('"')))
     for i in server.dirs:
-        if i.strip('"') != "INBOX":
+        if i.strip('"') != "INBOX" and  i.strip('"') != "Junk":
             sys.stdout.write('"imaps://%s/%s" ' % (url, i.strip('"')))
+    for i in server.dirs:
+        if i.strip('"') == "Junk":
+            sys.stdout.write('"imaps://%s/%s" ' % (url, i.strip('"')))
+
 # vim:set shiftwidth=4 softtabstop=4 expandtab:
