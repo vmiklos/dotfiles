@@ -120,6 +120,11 @@ augroup Zip
     autocmd BufReadCmd *.k3b,*.egg,*.epub,*.reqifz call zip#Browse(expand("<amatch>"))
 augroup END
 
+augroup Arduino
+    autocmd!
+    autocmd BufNewFile,BufRead *.ino set filetype=cpp
+augroup END
+
 " Mappings
 
 " 4 spaces instead of tabs style spacing
