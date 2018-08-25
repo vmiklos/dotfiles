@@ -93,8 +93,8 @@ augroup END
 
 augroup Mutt
     autocmd!
-    if filereadable($HOME . "/git/vmexam/gcontacts/gcontacts.vim")
-            source $HOME/git/vmexam/gcontacts/gcontacts.vim
+    if filereadable($HOME . "/git/vmexam/mutt/contacts/search.vim")
+            source $HOME/git/vmexam/mutt/contacts/search.vim
     endif
     autocmd Filetype mail set omnifunc=MuttContactsCompletion
 augroup END
