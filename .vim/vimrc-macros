@@ -78,6 +78,9 @@ augroup Cpp
     " Don't show error messages automatically. (Get a detailed diagnostic
     " message with <leader>d.)
     "let g:ycm_show_diagnostics_ui = 0
+    " Populate vims location list with new diagnostic data, so that :lprev and
+    " lnext can jump to the prev/next error.
+    let g:ycm_always_populate_location_list = 1
     " Auto-close the auto-opened preview window.
     let g:ycm_autoclose_preview_window_after_completion = 1
     " YCM key bindings
