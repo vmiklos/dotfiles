@@ -49,4 +49,7 @@ alias screen="screen -DR"
 # Find out what's the last pushed daily build.
 alias daily="ssh dev-downloads \"sh -c 'cd /srv/git/lo-linux-dbgutil-daily.git; git log -1'\""
 
+# Formats the last commit in the workdir (has to be still committed with commit --amend).
+alias git-clang-format-diff="git diff -U0 --no-color HEAD^ | clang-format-diff -p1 -i"
+
 export PATH=$HOME/.local/bin:$PATH
