@@ -2,5 +2,4 @@ subscribe frugalware-devel
 subscribe libreoffice@lists.freedesktop.org
 subscribe productivity@lists.collabora.co.uk
 subscribe szihk@googlegroups.com
-subscribe tdf-membership@lists.documentfoundation.org
 # vim: ft=muttrc
