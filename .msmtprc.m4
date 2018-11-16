@@ -1,6 +1,6 @@
 changequote(<!,!>)
 account default
-host mail.collabora.co.uk
+host mail.collabora.com
 port 587
 from vmiklos@collabora.com
 tls on
