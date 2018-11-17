@@ -55,7 +55,7 @@ augroup END
 augroup Cpp
     autocmd!
     "autocmd FileType cpp nnoremap <silent><leader>cc :call ClangInspectComment()<cr>
-    autocmd FileType cpp nnoremap <silent><leader>cd :call ClangJumpDeclaration()<cr>
+    "autocmd FileType cpp nnoremap <silent><leader>cd :call ClangJumpDeclaration()<cr>
     autocmd FileType cpp nnoremap <silent><leader>cf :call ClangInspectFunction()<cr>
     autocmd FileType cpp nnoremap <silent><leader>cn :call ClangInspectName()<cr>
     "autocmd FileType cpp nnoremap <silent><leader>ci :call ClangJumpInclude()<cr>
@@ -85,7 +85,7 @@ augroup Cpp
     let g:ycm_autoclose_preview_window_after_completion = 1
     " YCM key bindings
     autocmd FileType cpp nnoremap <silent><leader>cc :YcmCompleter GetDoc<cr>
-    "autocmd FileType cpp nnoremap <silent><leader>cd :YcmCompleter GoToDeclaration<cr>
+    autocmd FileType cpp nnoremap <silent><leader>cd :YcmCompleter GoToDeclaration<cr>
     autocmd FileType cpp nnoremap <silent><leader>ci :YcmCompleter GoToInclude<cr>
     autocmd FileType cpp nnoremap <silent><leader>ct :YcmCompleter GetType<cr>
     " :ccl closes the quickfix window.
