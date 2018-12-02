@@ -69,7 +69,7 @@ augroup Cpp
     " ./install.py --clang-completer
     "
     " YCM update:
-    " git checkout 15362d9cb8ec054c929e9a202252825eabe47e58 (2018-07-25)
+    " git checkout 75bf1738dcac502fa2d04e87116a3ce65249be8c (2018-11-27)
     " git submodule update --recursive
     "
     " YCM options
