@@ -53,3 +53,4 @@ alias daily="ssh dev-downloads \"sh -c 'cd /srv/git/lo-linux-dbgutil-daily.git; 
 alias git-clang-format-diff="git diff -U0 --no-color HEAD^ | clang-format-diff -p1 -i"
 
 export PATH=$HOME/.local/bin:$PATH
+export PYTHONPATH=$PYTHONPATH:~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/etc
