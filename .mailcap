@@ -11,3 +11,5 @@ application/msword; soffice %s
 # docx
 application/vnd.openxmlformats-officedocument.wordprocessingml.document; soffice %s
 image/*; display %s; ;  test=test -n "$DISPLAY"
+# ical, using <https://github.com/terabyte/mutt-filters>
+text/calendar; vcalendar-filter; copiousoutput

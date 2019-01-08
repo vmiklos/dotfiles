@@ -149,11 +149,7 @@ set check_new
 set mail_check=15
 set quit=ask-no
 set implicit_autoview
-message-hook . "unalternative_order *; alternative_order text/plain"
-message-hook "~f @vipmail.hu" "unalternative_order *; alternative_order text/html"
-message-hook "~f @freemail.hu" "unalternative_order *; alternative_order text/html"
-message-hook "~f picasaweb-noreply@google.com" "unalternative_order *; alternative_order text/html"
-message-hook "~f @sc.bme.hu" "unalternative_order *; alternative_order text/html"
+alternative_order text/plain text/html text/*
 
 # PGP
 # source /usr/share/doc/mutt-ng-20060402/samples/gpg.rc
