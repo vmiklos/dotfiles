@@ -95,6 +95,7 @@ augroup Cpp
     autocmd FileType cpp nnoremap <silent><leader>cx :YcmCompleter FixIt<cr>
     autocmd FileType cpp nnoremap <silent><leader>cr :pyf $HOME/git/llvm/tools/clang/tools/clang-rename/clang-rename.py<cr>
     autocmd FileType cpp vnoremap <silent><leader>gq :pyf $HOME/git/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
+    autocmd FileType objc vnoremap <silent><leader>gq :pyf $HOME/git/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
 augroup END
 
 augroup Mutt
