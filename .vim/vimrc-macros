@@ -4,6 +4,8 @@ call pathogen#runtime_append_all_bundles()
 set encoding=utf8
 " No auto-wrap text using textwidth.
 set formatoptions -=t
+" LibreOffice's clang-format has ColumnLimit:100, wrap comments accordingly.
+set textwidth=100
 " When a bracket is inserted, don't jump briefly to the matching one.
 set noshowmatch
 " Look in the current directory for "tags", and work up the tree towards root
