@@ -16,9 +16,8 @@ set maxmempattern=2000
 " Fine-tune completion: make it bash-like.
 set wildmenu
 set wildmode=longest,list
-" No indent after namespaces + automatically indent lines inside parentheses.
-" http://orchistro.tistory.com/236
-set cinoptions=N-s,(0,:0
+" No indent after namespaces.
+set cinoptions=N-s
 " auto-disable xpath if necessary
 py << EOF
 import vim
