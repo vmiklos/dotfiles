@@ -74,8 +74,9 @@ augroup Cpp
     " git submodule update --recursive
     "
     " YCM options
-    " Only suggest when asked explicitly.
+    " Only suggest when asked explicitly, except for C++.
     let g:ycm_auto_trigger = 0
+    autocmd FileType cpp let g:ycm_auto_trigger = 1
     " Don't show error messages automatically. (Get a detailed diagnostic
     " message with <leader>d.)
     "let g:ycm_show_diagnostics_ui = 0
@@ -123,7 +124,7 @@ augroup Zip
     autocmd!
     autocmd BufReadCmd *.docx,*.docm,*.dotx,*.dotm,*.xlsx,*.pptx,*.vsdx,*.apk call zip#Browse(expand("<amatch>"))
     autocmd BufReadCmd *.odt,*.odm,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg,*.oxt,*.odb call zip#Browse(expand("<amatch>"))
-    autocmd BufReadCmd *.sxw,*.stw call zip#Browse(expand("<amatch>"))
+    autocmd BufReadCmd *.sxw,*.stw,*.bau call zip#Browse(expand("<amatch>"))
     autocmd BufReadCmd *.k3b,*.egg,*.epub,*.reqifz call zip#Browse(expand("<amatch>"))
 augroup END
 
