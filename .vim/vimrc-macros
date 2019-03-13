@@ -53,15 +53,28 @@ augroup Binary
     autocmd BufWritePost *.bin set nomod | endif
 augroup END
 
+" 'Do what I mean' style current function name functionality.
+"
+" Semantic result would include all namespaces, YCM would even omit the class name for a member
+" function. This one uses the 'as written' form, leading to the least surprising results.
+fun! ShowFuncName()
+  let lnum = line(".")
+  let col = col(".")
+  echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
+  call search("\\%" . lnum . "l" . "\\%" . col . "c")
+endfun
+
 augroup Cpp
     autocmd!
     "autocmd FileType cpp nnoremap <silent><leader>cc :call ClangInspectComment()<cr>
     "autocmd FileType cpp nnoremap <silent><leader>cd :call ClangJumpDeclaration()<cr>
-    autocmd FileType cpp nnoremap <silent><leader>cf :call ClangInspectFunction()<cr>
+    "autocmd FileType cpp nnoremap <silent><leader>cf :call ClangInspectFunction()<cr>
     autocmd FileType cpp nnoremap <silent><leader>cn :call ClangInspectName()<cr>
     "autocmd FileType cpp nnoremap <silent><leader>ci :call ClangJumpInclude()<cr>
     "autocmd FileType cpp nnoremap <silent><leader>ct :call ClangInspectType()<cr>
     "autocmd FileType cpp set omnifunc=ClangInspectCompletion
+
+    autocmd FileType cpp nnoremap <silent><leader>cf :call ShowFuncName() <cr>
 
     " YCM setup:
     " git clone https://github.com/Valloric/YouCompleteMe.git
