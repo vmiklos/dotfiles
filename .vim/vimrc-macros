@@ -133,6 +133,11 @@ augroup Swig
     autocmd BufNewFile,BufRead *.swg set filetype=swig
 augroup END
 
+augroup Go
+    autocmd!
+    au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+augroup END
+
 augroup Zip
     autocmd!
     autocmd BufReadCmd *.docx,*.docm,*.dotx,*.dotm,*.xlsx,*.pptx,*.vsdx,*.apk call zip#Browse(expand("<amatch>"))
