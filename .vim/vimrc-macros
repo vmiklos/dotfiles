@@ -102,6 +102,8 @@ augroup Cpp
     autocmd FileType cpp nnoremap <silent><leader>cc :YcmCompleter GetDoc<cr>
     autocmd FileType cpp nnoremap <silent><leader>cd :YcmCompleter GoToDeclaration<cr>
     autocmd FileType rust nnoremap <silent><leader>cd :YcmCompleter GoToDeclaration<cr>
+    autocmd FileType python nnoremap <silent><leader>cd :YcmCompleter GoTo<cr>
+    autocmd FileType go nnoremap <silent><leader>cd :YcmCompleter GoTo<cr>
     autocmd FileType cpp nnoremap <silent><leader>ci :YcmCompleter GoToInclude<cr>
     autocmd FileType cpp nnoremap <silent><leader>ct :YcmCompleter GetType<cr>
     " :ccl closes the quickfix window.
