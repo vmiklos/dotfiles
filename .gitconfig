@@ -10,7 +10,7 @@
 	# %cd is _committer_ date
 	myonelinerlog = log --author=vmiklos --date=short --pretty=format:'%H %cd %s'
 	# travis auto-merge after CI
-	treview = push -f origin HEAD:ci/master
+	treview = push -f origin HEAD:ci/vmiklos
 [review "review.cyanogenmod.org"]
 	username = vmiklos
 [http]
