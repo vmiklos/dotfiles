@@ -114,6 +114,7 @@ augroup Cpp
     autocmd FileType cpp vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType objc vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType javascript vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
+    autocmd FileType go nnoremap <silent><leader>gq :% !goimports<CR>
 augroup END
 
 augroup Mutt
