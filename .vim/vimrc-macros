@@ -81,6 +81,8 @@ augroup Cpp
     " cd YouCompleteMe
     " git submodule update --init --recursive
     " ./install.py --clang-completer
+    " # --rust-completer
+    " # --go-completer
     "
     " YCM update:
     " git checkout 75bf1738dcac502fa2d04e87116a3ce65249be8c (2018-11-27)
