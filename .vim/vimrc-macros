@@ -83,6 +83,7 @@ augroup Cpp
     " ./install.py --clang-completer
     " # --rust-completer
     " # --go-completer
+    " # --java-completer
     "
     " YCM update:
     " git checkout 75bf1738dcac502fa2d04e87116a3ce65249be8c (2018-11-27)
@@ -114,6 +115,7 @@ augroup Cpp
     autocmd FileType cpp vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType objc vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType javascript vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
+    autocmd FileType java vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType go nnoremap <silent><leader>gq :% !goimports<CR>
 augroup END
 
