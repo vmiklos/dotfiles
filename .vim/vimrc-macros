@@ -28,7 +28,12 @@ except ImportError:
 EOF
 " Avoid e.g. the selection created by V automatically end up on the primary
 " clipboard.
-set clipboard=exclude:.*
+if !has("gui_running")
+    set clipboard=exclude:.*
+else
+    " The opposite for gvim: not only do that, but make sure it works with e.g. Ctrl-V in Firefox.
+    set clipboard=unnamedplus
+endif
 " http://andrew.stwrt.ca/posts/project-specific-vimrc/
 set exrc
 set secure
