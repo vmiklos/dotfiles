@@ -89,6 +89,7 @@ augroup Cpp
     " # --rust-completer
     " # --go-completer
     " # --java-completer
+    " # --cs-completer
     "
     " YCM update:
     " git checkout 75bf1738dcac502fa2d04e87116a3ce65249be8c (2018-11-27)
@@ -101,6 +102,8 @@ augroup Cpp
     " Don't show error messages automatically. (Get a detailed diagnostic
     " message with <leader>d.)
     "let g:ycm_show_diagnostics_ui = 0
+    " Do this for C# where there are false positives.
+    autocmd FileType cs let g:ycm_show_diagnostics_ui = 0
     " Populate vims location list with new diagnostic data, so that :lprev and
     " lnext can jump to the prev/next error.
     let g:ycm_always_populate_location_list = 1
