@@ -26,14 +26,10 @@ try:
 except ImportError:
     vim.command('let g:skip_xpath = 1')
 EOF
-" Avoid e.g. the selection created by V automatically end up on the primary
-" clipboard.
-if !has("gui_running")
-    set clipboard=exclude:.*
-else
-    " The opposite for gvim: not only do that, but make sure it works with e.g. Ctrl-V in Firefox.
-    set clipboard=unnamedplus
-endif
+
+" Avoid 'set clipboard=...', this way vim selection / X11 selection / clipboard nicely stays
+" independent. And in case writing to the X11 clipboard is needed, that can be done using '"+y'.
+
 " http://andrew.stwrt.ca/posts/project-specific-vimrc/
 set exrc
 set secure
