@@ -13,3 +13,4 @@ application/vnd.openxmlformats-officedocument.wordprocessingml.document; soffice
 image/*; display %s; ;  test=test -n "$DISPLAY"
 # ical, using <https://github.com/terabyte/mutt-filters>
 text/calendar; vcalendar-filter; copiousoutput
+application/ics; vcalendar-filter; copiousoutput
