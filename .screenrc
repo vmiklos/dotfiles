@@ -1,4 +1,4 @@
 defscrollback 1000
 hardstatus on
 hardstatus alwayslastline
-hardstatus string '%{.kw}[%c] o9010 %-w%{.wk}%n %t%{-}%+w'
+hardstatus string '%{.kw}[%c] o7050 %-w%{.wk}%n %t%{-}%+w'
