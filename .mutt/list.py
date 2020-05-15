@@ -34,6 +34,8 @@ class ImapLister:
         else:
             mylist = sock.list
         for i in mylist(dir)[1]:
+            if not i:
+                continue
             if i.split(" ")[-1] == dir:
                 i = "INBOX"
             if i.split(" ")[-1][-8:] != "_archive" and not self.needs_ignore(server, i):
