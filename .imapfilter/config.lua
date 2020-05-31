@@ -1,4 +1,4 @@
--- gmail: echo "before:$(date --date="90 days ago" +%Y/%m/%d) label:lists-linux-hotplug"
+-- gmail: echo "before:$(date --date="90 days ago" +%Y/%m/%d) label:lists-libreoffice-commits"
 
 account = IMAP {
 	server = 'mail.collabora.com',
