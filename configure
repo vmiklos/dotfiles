@@ -12,6 +12,6 @@ echo "creating .linphonerc"
 m4 -DVOIPSUSEDEPASSWORD="$(cpm --quiet sip.*suse.de)" .linphonerc.m4 > .linphonerc
 echo "creating .oscrc"
 m4 -DNOVELLEXTERNALPASSWORD="$(cpm --quiet http.*external.*novell.com)" .oscrc.m4 > .oscrc
-echo "creating .offlineimaprc"
-m4 -DPASSWORD="$(cpm --quiet googleapps.*vmiklos.hu)" .offlineimaprc.m4 > .offlineimaprc
+echo "creating .mbsyncrc"
+m4 -DPASSWORD="$(cpm --quiet googleapps.*vmiklos.hu)" .mbsyncrc.m4 > .mbsyncrc
 cat .config/geeqie/geeqierc.xml.in > .config/geeqie/geeqierc.xml
