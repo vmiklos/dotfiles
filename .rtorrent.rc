@@ -13,7 +13,7 @@ session = ./session
 
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
-schedule = watch_directory,5,5,load_start=./watch/*.torrent
+schedule = watch_directory,5,5,load.start=./watch/*.torrent
 
 # Port range to use for listening.
 port_range = 6916-6916
