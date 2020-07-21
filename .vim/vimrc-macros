@@ -105,9 +105,11 @@ augroup Cpp
     let g:ycm_always_populate_location_list = 1
     " Auto-close the auto-opened preview window.
     let g:ycm_autoclose_preview_window_after_completion = 1
-    " Don't start indexing in the background, like libclang did.
-    " Also ignore a .clang-tidy which may be there.
-    let g:ycm_clangd_args = ["-background-index=false", "--clang-tidy=false"]
+    " Like libclang did:
+    " - Don't start indexing in the background.
+    " - Ignore a .clang-tidy which may be there.
+    " - Never insert includes automatically.
+    let g:ycm_clangd_args = ["-background-index=false", "--clang-tidy=false", "--header-insertion=never"]
     " YCM key bindings
     autocmd FileType cpp nnoremap <silent><leader>cc :YcmCompleter GetDoc<cr>
     autocmd FileType cpp nnoremap <silent><leader>cd :YcmCompleter GoToDeclaration<cr>
