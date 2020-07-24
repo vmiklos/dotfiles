@@ -30,9 +30,10 @@ EOF
 " Avoid 'set clipboard=...', this way vim selection / X11 selection / clipboard nicely stays
 " independent. And in case writing to the X11 clipboard is needed, that can be done using '"+y'.
 
-" http://andrew.stwrt.ca/posts/project-specific-vimrc/
-set exrc
-set secure
+" cd ~/.vim/pack/plugins/start
+" git clone https://github.com/embear/vim-localvimrc
+let g:localvimrc_whitelist=['/home/vmiklos/git/vmexam/']
+
 " :help leader
 let mapleader = ","
 " Client code for <https://github.com/libclang-vim/libclang-vim>.
