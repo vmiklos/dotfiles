@@ -1,8 +1,0 @@
-[Unit]
-Description=matterircd
-
-[Service]
-ExecStart=/root/bin/matterircd-linux-arm -bind 127.0.0.1:6668 -mmserver chat.collabora.com -mmteam collabora -restrict chat.collabora.com
-
-[Install]
-WantedBy=multi-user.target
