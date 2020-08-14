@@ -2,7 +2,7 @@
 Description=matterircd
  
 [Service]
-ExecStart=/home/vmiklos/git/go/bin/matterircd -bind 127.0.0.1:6668 -mmserver chat.collabora.com -mmteam collabora -restrict chat.collabora.com
+ExecStart=/home/vmiklos/git/go/bin/matterircd --bind 127.0.0.1:6668
 Restart=always
 
 [Install]
