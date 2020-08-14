@@ -1,0 +1,9 @@
+[Unit]
+Description=matrix-ircd
+ 
+[Service]
+ExecStart=/home/vmiklos/git/matrix-ircd/target/release/matrix-ircd --url https://wilson.vmiklos.hu:8448
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
