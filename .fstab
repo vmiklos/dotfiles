@@ -1,0 +1,1 @@
+sshfs#plug: /home/vmiklos/mnt/plug fuse defaults,user,reconnect,ServerAliveInterval=15,ServerAliveCountMax=3 0 0
