@@ -34,6 +34,9 @@ EOF
 " git clone https://github.com/embear/vim-localvimrc
 let g:localvimrc_whitelist=['/home/vmiklos/git/vmexam/']
 
+" git clone https://github.com/udalov/kotlin-vim.git ~/.vim/pack/plugins/start/kotlin-vim
+" git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/pack/typescript/start/typescript-vim
+
 " :help leader
 let mapleader = ","
 " Client code for <https://github.com/libclang-vim/libclang-vim>.
