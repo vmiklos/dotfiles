@@ -140,6 +140,12 @@ augroup Mutt
     autocmd Filetype mail set omnifunc=MuttContactsCompletion
 augroup END
 
+augroup GitCommit
+    autocmd!
+    " less than the default of 100
+    autocmd Filetype gitcommit set tw=72
+augroup END
+
 augroup Ly
     autocmd!
     autocmd BufNewFile,BufReadPost,BufEnter *.ly so /usr/share/lilypond/2.12.1/vim/syntax/lilypond.vim
