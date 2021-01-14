@@ -81,7 +81,6 @@ bind index \cl limit
 bind index l sidebar-open
 macro index P "<enter-command>unmailboxes `python ~/.mutt/mailboxes.py --big`<enter>"
 macro index L "<enter-command>mailboxes `python ~/.mutt/mailboxes.py --big`<enter>"
-macro index C "T.\n;WN^T.\n" "mark all messages as read"
 
 macro index S "<enter-command>unset wait_key\n\
 <pipe-entry>bogofilter -s;date +%y%m%d >>~/public_html/stats/spam_s\n\
