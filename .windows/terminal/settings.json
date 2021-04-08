@@ -101,6 +101,14 @@
       "keys": "alt+shift+d"
     },
     {
+      "command": "scrollUp",
+      "keys": "shift+up"
+    },
+    {
+      "command": "scrollDown",
+      "keys": "shift+down"
+    },
+    {
       "command": "nextTab",
       "keys": "shift+right"
     },
