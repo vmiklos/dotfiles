@@ -107,9 +107,6 @@ set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del
 
 macro pager A "<pipe-entry>cd ~/git/libreoffice/master; git am"
 
-set query_command="abook --mutt-query '%s'"
-macro pager T |'abook --add-email'\n
-
 # hilighting shortcuts
 color index brightgreen  default    ~p    # To me (personal)
 color index yellow       default    ~N    # New
@@ -132,6 +129,7 @@ bind index <Left> previous-thread
 bind index n next-unread
 bind index p previous-new
 bind index \cn previous-new
+bind pager <backtab> previous-new-then-unread
 
 set alias_file=~/.mutt/aliases
 set nosig_dashes
