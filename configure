@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "creating .mutt/accounts/10gmail.conf"
-m4 -DPASSWORD="$(cpm --quiet googleapps.*vmiklos.hu)" .mutt/accounts/10gmail.conf.m4 > .mutt/accounts/10gmail.conf
+m4 -DPASSWORD="$(cpm --quiet googleapps.*mail-$HOSTNAME.*vmiklos.hu)" .mutt/accounts/10gmail.conf.m4 > .mutt/accounts/10gmail.conf
 echo "creating .mutt/accounts/15collabora.conf"
 m4 -DCPPASSWORD="$(cpm --quiet ldap.*collabora.com)" .mutt/accounts/15collabora.conf.m4 > .mutt/accounts/15collabora.conf
 echo "creating .mutt/accounts/20suse.conf"
@@ -13,5 +13,5 @@ m4 -DVOIPSUSEDEPASSWORD="$(cpm --quiet sip.*suse.de)" .linphonerc.m4 > .linphone
 echo "creating .oscrc"
 m4 -DNOVELLEXTERNALPASSWORD="$(cpm --quiet http.*external.*novell.com)" .oscrc.m4 > .oscrc
 echo "creating .mbsyncrc"
-m4 -DPASSWORD="$(cpm --quiet googleapps.*vmiklos.hu)" .mbsyncrc.m4 > .mbsyncrc
+m4 -DPASSWORD="$(cpm --quiet googleapps.*mail-$HOSTNAME.*vmiklos.hu)" .mbsyncrc.m4 > .mbsyncrc
 cat .config/geeqie/geeqierc.xml.in > .config/geeqie/geeqierc.xml
