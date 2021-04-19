@@ -7,6 +7,7 @@ Pass             PASSWORD
 # quota.
 PipelineDepth 1
 SSLType IMAPS
+SSLVersions TLSv1.1
 CertificateFile  /var/lib/ca-certificates/ca-bundle.pem
 
 IMAPStore  gmail-cloud
