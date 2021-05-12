@@ -85,9 +85,8 @@ augroup Cpp
     " git clone https://github.com/Valloric/YouCompleteMe.git
     " cd YouCompleteMe
     " git submodule update --init --recursive
-    " ./install.py --clangd-completer
+    " ./install.py --clangd-completer --go-completer --ts-completer
     " # --rust-completer
-    " # --go-completer
     " # --java-completer
     " # --cs-completer
     "
@@ -122,6 +121,7 @@ augroup Cpp
     autocmd FileType go nnoremap <silent><leader>cd :YcmCompleter GoTo<cr>
     autocmd FileType cpp nnoremap <silent><leader>ci :YcmCompleter GoToInclude<cr>
     autocmd FileType cpp nnoremap <silent><leader>ct :YcmCompleter GetType<cr>
+    autocmd FileType go nnoremap <silent><leader>ct :YcmCompleter GetType<cr>
     " :ccl closes the quickfix window.
     autocmd FileType cpp nnoremap <silent><leader>cx :YcmCompleter FixIt<cr>
     autocmd FileType cpp nnoremap <silent><leader>cr :pyf $HOME/git/llvm/clang/tools/clang-rename/clang-rename.py<cr>
