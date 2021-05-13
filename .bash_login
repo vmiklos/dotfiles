@@ -53,9 +53,7 @@ alias git-clang-format-diff="git diff -U0 --no-color HEAD^ | clang-format-diff -
 export PATH=$HOME/.local/bin:$PATH
 
 # rusty-tags, etc.
-if [ -e $HOME/.cargo/bin ]; then
-    export PATH="$HOME/.cargo/bin:$PATH"
-fi
+source "$HOME/.cargo/env"
 
 # dlv, etc.
 export GOPATH=$HOME/.go
