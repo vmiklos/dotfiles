@@ -85,17 +85,20 @@ augroup Cpp
     " git clone https://github.com/Valloric/YouCompleteMe.git
     " cd YouCompleteMe
     " git submodule update --init --recursive
-    " ./install.py --clangd-completer --rust-completer --go-completer --ts-completer
+    " CC=gcc-9 CXX=g++-9 ./install.py --clangd-completer --rust-completer --go-completer --ts-completer
     " # --java-completer
     " # --cs-completer
     "
     " YCM update:
-    " git checkout 321700e848595af129d5d75afac92d0060d3cdf9 (2020-07-15)
+    " zypper -p https://download.opensuse.org/repositories/editors/openSUSE_Leap_15.2/ in vim
+    " git checkout 4df6f35f0c9f9aec21a3f567397496b5dee6acc7 (2021-05-25)
     " git submodule update --recursive
     "
     " YCM options
     " Only suggest when asked explicitly, except for C++.
     let g:ycm_auto_trigger = 0
+    " Don't show documentation in a popup at the cursor location after a short delay. 
+    let g:ycm_auto_hover = ""
     autocmd FileType cpp let g:ycm_auto_trigger = 1
     " Don't show error messages automatically. (Get a detailed diagnostic
     " message with <leader>d.)
@@ -121,14 +124,15 @@ augroup Cpp
     autocmd FileType cpp nnoremap <silent><leader>ci :YcmCompleter GoToInclude<cr>
     autocmd FileType cpp nnoremap <silent><leader>ct :YcmCompleter GetType<cr>
     autocmd FileType go nnoremap <silent><leader>ct :YcmCompleter GetType<cr>
+    autocmd FileType rust nnoremap <silent><leader>ct :YcmCompleter GetType<cr>
     " :ccl closes the quickfix window.
     autocmd FileType cpp nnoremap <silent><leader>cx :YcmCompleter FixIt<cr>
-    autocmd FileType cpp nnoremap <silent><leader>cr :pyf $HOME/git/llvm/clang/tools/clang-rename/clang-rename.py<cr>
     autocmd FileType cpp vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType objc vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType javascript vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType java vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType go nnoremap <silent><leader>gq :% !goimports<CR>
+    autocmd FileType rust vnoremap <silent><leader>gq :YcmCompleter Format<CR>
 augroup END
 
 augroup Mutt
