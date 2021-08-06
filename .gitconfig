@@ -7,6 +7,7 @@
 	default = current
 [alias]
 	mylog = log --author=vmiklos
+	lg = log --pretty=fuller
 	# %cd is _committer_ date
 	myonelinerlog = log --author=vmiklos --date=short --pretty=format:'%H %cd %s'
 [review "review.cyanogenmod.org"]
