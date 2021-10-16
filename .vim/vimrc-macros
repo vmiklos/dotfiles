@@ -41,7 +41,6 @@ let g:localvimrc_whitelist=['/home/vmiklos/git/vmexam/']
 " ~/.vim/pack/plugins/start/
 " git clone https://github.com/tyru/open-browser-github.vim
 " git clone https://github.com/tyru/open-browser.vim
-" git clone https://github.com/alx741/vim-rustfmt
 
 " :help leader
 let mapleader = ","
