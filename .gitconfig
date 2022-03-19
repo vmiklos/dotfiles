@@ -26,3 +26,5 @@
 	prune = true
 [interactive]
 	singleKey = true
+[advice]
+	skippedCherryPicks = false

@@ -137,7 +137,8 @@ augroup Cpp
     autocmd FileType javascript vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType java vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType go nnoremap <silent><leader>gq :% !goimports<CR>
-    autocmd FileType rust vnoremap <silent><leader>gq :YcmCompleter Format<CR>
+    " rustfmt range formatting is unstable at the moment
+    autocmd FileType rust nnoremap <silent><leader>gq :YcmCompleter Format<CR>
 augroup END
 
 augroup Mutt
