@@ -134,6 +134,7 @@ bind pager <backtab> previous-new-then-unread
 set alias_file=~/.mutt/aliases
 set nosig_dashes
 auto_view text/html
+bind attach <return> view-mailcap
 
 source ~/.mutt/aliases
 source ~/.mutt/lists
