@@ -85,6 +85,7 @@ augroup Cpp
     "autocmd FileType cpp set omnifunc=ClangInspectCompletion
 
     autocmd FileType cpp nnoremap <silent><leader>cf :call ShowFuncName() <cr>
+    autocmd FileType rust nnoremap <silent><leader>cf :call ShowFuncName() <cr>
 
     " YCM setup:
     " git clone https://github.com/Valloric/YouCompleteMe.git
