@@ -18,14 +18,6 @@ set wildmenu
 set wildmode=longest,list
 " No indent after namespaces.
 set cinoptions=N-s
-" auto-disable xpath if necessary
-py << EOF
-import vim
-try:
-    import lxml
-except ImportError:
-    vim.command('let g:skip_xpath = 1')
-EOF
 
 " Avoid 'set clipboard=...', this way vim selection / X11 selection / clipboard nicely stays
 " independent. And in case writing to the X11 clipboard is needed, that can be done using '"+y'.
@@ -133,10 +125,11 @@ augroup Cpp
     autocmd FileType rust nnoremap <silent><leader>ct :YcmCompleter GetType<cr>
     " :ccl closes the quickfix window.
     autocmd FileType cpp nnoremap <silent><leader>cx :YcmCompleter FixIt<cr>
-    autocmd FileType cpp vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
-    autocmd FileType objc vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
-    autocmd FileType javascript vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
-    autocmd FileType java vnoremap <silent><leader>gq :pyf $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
+    autocmd FileType rust nnoremap <silent><leader>cx :YcmCompleter FixIt<cr>
+    autocmd FileType cpp vnoremap <silent><leader>gq :py3f $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
+    autocmd FileType objc vnoremap <silent><leader>gq :py3f $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
+    autocmd FileType javascript vnoremap <silent><leader>gq :py3f $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
+    autocmd FileType java vnoremap <silent><leader>gq :py3f $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType go nnoremap <silent><leader>gq :% !goimports<CR>
     " rustfmt range formatting is unstable at the moment
     autocmd FileType rust nnoremap <silent><leader>gq :YcmCompleter Format<CR>
@@ -202,7 +195,7 @@ set pastetoggle=<F9>
 noremap <F10> :echo expand('%:p').':'.line('.')<CR>
 noremap <F11> :set ff=unix<CR>:execute '% !prettyprint ' . &filetype<CR>
 command XPath XPathSearchPrompt
-command GotoRandom pyf $HOME/git/vmexam/vim/goto-random.py
+command GotoRandom py3f $HOME/git/vmexam/vim/goto-random.py
 " libreoffice: smartart sanitize
 nnoremap <silent><leader>ls :% !pptx-kill-uuid.py<cr>
 " Map Ctrl-Space to Ctrl-X Ctrl-O
