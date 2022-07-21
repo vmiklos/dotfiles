@@ -1,17 +1,16 @@
 #!/bin/bash
 
 echo "creating .mutt/accounts/10gmail.conf"
-m4 -DPASSWORD="$(cpm --quiet googleapps.*mail-$HOSTNAME.*vmiklos.hu)" .mutt/accounts/10gmail.conf.m4 > .mutt/accounts/10gmail.conf
+m4 -DPASSWORD="$(cpm -q -m accounts.google.com -u $USER-mail-$HOSTNAME)" .mutt/accounts/10gmail.conf.m4 > .mutt/accounts/10gmail.conf
 echo "creating .mutt/accounts/15collabora.conf"
-m4 -DCPPASSWORD="$(cpm --quiet ldap.*collabora.com)" .mutt/accounts/15collabora.conf.m4 > .mutt/accounts/15collabora.conf
-echo "creating .mutt/accounts/20suse.conf"
-m4 -DSUSEPASSWORD="$(cpm --quiet http.*innerweb.novell.com)" .mutt/accounts/20suse.conf.m4 > .mutt/accounts/20suse.conf
+m4 -DCPPASSWORD="$(cpm -q -m collabora.com -s ldap)" .mutt/accounts/15collabora.conf.m4 > .mutt/accounts/15collabora.conf
+cat .mutt/accounts/20suse.conf.m4 > .mutt/accounts/20suse.conf
 echo "creating .msmtprc"
-m4 -DPASSWORD="$(cpm --quiet ldap.*collabora.com)" .msmtprc.m4 > .msmtprc
+m4 -DPASSWORD="$(cpm -q -m collabora.com -s ldap)" .msmtprc.m4 > .msmtprc
 echo "creating .linphonerc"
-m4 -DVOIPSUSEDEPASSWORD="$(cpm --quiet sip.*suse.de)" .linphonerc.m4 > .linphonerc
+m4 -DVOIPSUSEDEPASSWORD="$(cpm -q -m voip.suse.de)" .linphonerc.m4 > .linphonerc
 echo "creating .oscrc"
-m4 -DNOVELLEXTERNALPASSWORD="$(cpm --quiet http.*external.*novell.com)" .oscrc.m4 > .oscrc
+m4 -DNOVELLEXTERNALPASSWORD="$(cpm -q -m externalacc.novell.com)" .oscrc.m4 > .oscrc
 echo "creating .mbsyncrc"
-m4 -DPASSWORD="$(cpm --quiet googleapps.*mail-$HOSTNAME.*vmiklos.hu)" .mbsyncrc.m4 > .mbsyncrc
+m4 -DPASSWORD="$(cpm -q -m accounts.google.com -u $USER-mail-$HOSTNAME)" .mbsyncrc.m4 > .mbsyncrc
 cat .config/geeqie/geeqierc.xml.in > .config/geeqie/geeqierc.xml
