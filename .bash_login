@@ -11,6 +11,8 @@ PS1='\u@\h:\w\$ '
 export LS_OPTIONS=$(echo $LS_OPTIONS|sed 's/--color=[^ ]\+/--color=auto/')
 # LibreOffice gbuild colors
 export gb_COLOR=1
+# Silence 'AT-SPI: Could not obtain desktop path or name' warnings.
+export NO_AT_BRIDGE=1
 
 # F: quit if input is less then one page
 # M: no more-like short prompt
