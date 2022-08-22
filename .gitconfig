@@ -6,7 +6,7 @@
 [push]
 	default = current
 [alias]
-	mylog = log --author=vmiklos
+	mylog = log --author='Miklos Vajna'
 	lg = log --pretty=fuller
 	# %cd is _committer_ date
 	myonelinerlog = log --author=vmiklos --date=short --pretty=format:'%H %cd %s'
