@@ -88,8 +88,8 @@ augroup Cpp
     " # --cs-completer
     "
     " YCM update:
-    " zypper -p https://download.opensuse.org/repositories/editors/openSUSE_Leap_15.3/ in vim
-    " git checkout 0dc8989e394ce02adb1c4a0d4a7981017e212996 (2022-08-21)
+    " zypper -p https://download.opensuse.org/repositories/editors/openSUSE_Leap_15.4/ in vim
+    " git checkout 99ccab251fad7c8b235582b46752a0536d01b315 (2022-10-06)
     " git submodule update --recursive
     "
     " YCM options
