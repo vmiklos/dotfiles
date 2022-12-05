@@ -37,6 +37,10 @@ set mime_forward=ask-no
 set postpone=ask-yes
 set print=yes
 set print_command="muttprint -P A4 -p TO_FILE:/tmp/vmiklos.ps --penguin off && ps2pdf /tmp/vmiklos.ps /tmp/vmiklos.pdf && okular /tmp/vmiklos.pdf"
+
+# save formatted email for '|vim -'
+set pipe_decode=yes
+
 set recall=ask-no
 set reply_to=yes
 set forward_format = "Fwd: [ %s ]"
