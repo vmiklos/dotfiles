@@ -2,22 +2,23 @@ mailboxes imaps://outlook.office365.com/INBOX
 account-hook imaps://outlook.office365.com/ 'set imap_user=vmiklos@suse.com'
 # run './mutt_oauth2.py vmiklos@suse.com.tokens --authorize' instead.
 account-hook imaps://outlook.office365.com/ 'unset imap_pass'
-folder-hook imaps://outlook.office365.com/ '\
+folder-hook imaps://outlook.office365.com/ "\
 	unset smtp_url; \
 	unset smtp_pass; \
-	set hostname="vmiklos.hu"; \
+	set hostname=\"vmiklos.hu\"; \
 	unset signature; \
-	set imap_authenticators="xoauth2"; \
-	set imap_oauth_refresh_command="~/.mutt/mutt_oauth2.py ~/.mutt/vmiklos@suse.com.tokens"; \
+	set imap_authenticators=\"xoauth2\"; \
+	set imap_oauth_refresh_command=\"~/.mutt/mutt_oauth2.py ~/.mutt/vmiklos@suse.com.tokens\"; \
 	set folder=imaps://outlook.office365.com/; \
 	unset record; \
 	unset postponed; \
-	set from="Miklos Vajna <vmiklos@suse.com>"; \
+	set from=\"Miklos Vajna <vmiklos@suse.com>\"; \
 	unset crypt_autosign; \
 	bind index r reply; \
 	bind pager r reply; \
 	set sort=threads; \
-	set attribution="On %d, %f wrote:" \
-'
+	set editor=\"env MUTT_ACCOUNT=20suse vim -c 'set tw=72 noautoindent expandtab notitle ft=mail fileencodings='\"; \
+	set attribution=\"On %d, %f wrote:\" \
+"
 
 # vim: ft=muttrc
