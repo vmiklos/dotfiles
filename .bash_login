@@ -46,8 +46,8 @@ export PRINTER="hp-p1566"
 # Try to attach to an existing screen by default.
 alias screen="screen -DR"
 
-# Find out what's the last pushed daily build.
-alias daily="ssh dev-downloads \"sh -c 'cd /srv/git/lo-linux-dbgutil-daily.git; git log -1'\""
+# 2FA means searching for TOTP passwords only, e.g. "2fa login.colla".
+alias 2fa="cpm --totp"
 
 # Formats the last commit in the workdir (has to be still committed with commit --amend).
 alias git-clang-format-diff="git diff -U0 --no-color HEAD^ | clang-format-diff -p1 -i"
