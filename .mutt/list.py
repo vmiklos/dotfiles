@@ -35,7 +35,7 @@ class ImapLister:
             i = i.decode("utf-8")
             if i.split(" ")[-1] == dir:
                 i = "INBOX"
-            if i.split(" ")[-1][-8:] != "_archive" and not self.needs_ignore(server, i):
+            if not self.needs_ignore(server, i):
                 if '" "' in i:
                     self.dirs.append(i.split('" "')[-1].strip('"'))
                 else:
@@ -64,10 +64,7 @@ if __name__ == "__main__":
         if i.strip('"') == "INBOX":
             sys.stdout.write('"imaps://%s/%s" ' % (url, i.strip('"')))
     for i in server.dirs:
-        if i.strip('"') != "INBOX" and  i.strip('"') != "Junk":
-            sys.stdout.write('"imaps://%s/%s" ' % (url, i.strip('"')))
-    for i in server.dirs:
-        if i.strip('"') == "Junk":
+        if i.strip('"') != "INBOX":
             sys.stdout.write('"imaps://%s/%s" ' % (url, i.strip('"')))
 
 # vim:set shiftwidth=4 softtabstop=4 expandtab:
