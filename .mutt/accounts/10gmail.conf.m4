@@ -1,6 +1,6 @@
 changequote(<!,!>)
 set folder=imaps://imap.gmail.com/
-mailboxes `python ~/.mutt/list.py imap.gmail.com vmiklos@vmiklos.hu PASSWORD ""`
+mailboxes `python ~/.mutt/list.py imap.gmail.com vmiklos@vmiklos.hu PASSWORD`
 account-hook imaps://imap.gmail.com/ 'set imap_user=vmiklos@vmiklos.hu imap_pass=PASSWORD'
 folder-hook imaps://imap.gmail.com/ "\
 	set smtp_url=\"smtps://vmiklos@vmiklos.hu@smtp.gmail.com:465/\"; \
