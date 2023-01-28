@@ -1,0 +1,3 @@
+ignore:
+    imap.gmail.com: ["[Gmail]/All Mail"]
+# vim:set shiftwidth=4 softtabstop=4 expandtab:
