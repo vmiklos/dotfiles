@@ -1,5 +1,5 @@
 changequote(<!,!>)
-mailboxes `python ~/.mutt/list.py mail.collabora.com vmiklos CPPASSWORD --subscr`
+mailboxes `python ~/.mutt/list.py mail.collabora.com vmiklos CPPASSWORD`
 account-hook imaps://mail.collabora.com/ 'set imap_user=vmiklos imap_pass=CPPASSWORD'
 folder-hook imaps://mail.collabora.com/ "\
 	set smtp_url=\"smtp://vmiklos:CPPASSWORD@mail.collabora.com:587\"; \

@@ -15,17 +15,13 @@ using --subscr, only subscribed folders are listed.
 
 
 class ImapLister:
-    def __init__(self, server=None, user=None, pwd=None, subscr=False):
+    def __init__(self, server=None, user=None, pwd=None):
         with open(os.path.expanduser("~/.mutt/imap-lister.yaml")) as stream:
             self.config = yaml.safe_load(stream)
         self.dirs = []
         sock = imaplib.IMAP4_SSL(server)
         sock.login(user, pwd)
-        if subscr:
-            dirs = sock.lsub()
-        else:
-            dirs = sock.list()
-        for i in dirs[1]:
+        for i in sock.lsub()[1]:
             # Split the string by spaces, preserving quoted substrings.
             folder = shlex.split(i)[-1]
             if self.needs_ignore(server, folder):
@@ -41,9 +37,7 @@ class ImapLister:
 
 if __name__ == "__main__":
     sys.stderr.write("Listing %s..." % sys.argv[1])
-    # We have one more parameter to only list subscribed folders.
-    subscr = len(sys.argv) > 4
-    server = ImapLister(server=sys.argv[1], user=sys.argv[2], pwd=sys.argv[3], subscr=subscr)
+    server = ImapLister(server=sys.argv[1], user=sys.argv[2], pwd=sys.argv[3])
     url = sys.argv[1]
     sys.stderr.write(" done.\n")
     sys.stdout.write('"imaps://%s/INBOX" ' % url)
