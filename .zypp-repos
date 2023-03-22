@@ -1,14 +1,20 @@
-$ zypper lr -u|sed 's/^.\{5\}//'
-Alias                     | Name                                    | Enabled | GPG Check | Refresh | URI
---------------------------+-----------------------------------------+---------+-----------+---------+----------------------------------------------------------------------------
-google-talkplugin         | google-talkplugin                       | Yes     | ( p) Yes  | Yes     | http://dl.google.com/linux/talkplugin/rpm/stable/x86_64
-home-vmiklos              | home-vmiklos                            | Yes     | (r ) Yes  | No      | http://download.opensuse.org/repositories/home:/vmiklos/openSUSE_Leap_42.1/
-packman                   | packman                                 | Yes     | (r ) Yes  | No      | http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_42.1/
-repo-debug                | openSUSE-Leap-42.1-Debug                | No      | ----      | No      | http://download.opensuse.org/debug/distribution/leap/42.1/repo/oss/
-repo-debug-update         | openSUSE-Leap-42.1-Update-Debug         | No      | ----      | No      | http://download.opensuse.org/debug/update/leap/42.1/oss
-repo-debug-update-non-oss | openSUSE-Leap-42.1-Update-Debug-Non-Oss | No      | ----      | No      | http://download.opensuse.org/debug/update/leap/42.1/non-oss/
-repo-non-oss              | openSUSE-Leap-42.1-Non-Oss              | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/distribution/leap/42.1/repo/non-oss/
-repo-oss                  | openSUSE-Leap-42.1-Oss                  | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/distribution/leap/42.1/repo/oss/
-repo-source               | openSUSE-Leap-42.1-Source               | No      | ----      | No      | http://download.opensuse.org/source/distribution/leap/42.1/repo/oss/
-repo-update               | openSUSE-Leap-42.1-Update               | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/update/leap/42.1/oss/
-repo-update-non-oss       | openSUSE-Leap-42.1-Update-Non-Oss       | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/update/leap/42.1/non-oss/
+$ zypper lr -u
+Alias                       | Name                                    | Enabled | GPG Check | Refresh | URI
+----------------------------+-----------------------------------------+---------+-----------+---------+---------------------------------------------------------------------------------
+collabora-office-snapshot   | collabora-office-snapshot               | Yes     | (r ) Yes  | No      | https://www.collaboraoffice.com/downloads/Collabora-Office-22-Snapshot/Linux/yum
+gh-cli                      | packages for the GitHub CLI             | Yes     | ( p) Yes  | No      | https://cli.github.com/packages/rpm
+home-vmiklos                | home-vmiklos                            | Yes     | (r ) Yes  | No      | http://download.opensuse.org/repositories/home:/vmiklos/openSUSE_Leap_15.4/
+packman                     | packman                                 | No      | ----      | ----    | http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.4/
+repo-backports-debug-update | Update repository with updates for op-> | No      | ----      | ----    | http://download.opensuse.org/update/leap/15.4/backports_debug/
+repo-backports-update       | Update repository of openSUSE Backports | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/update/leap/15.4/backports/
+repo-debug                  | Debug Repository                        | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/debug/distribution/leap/15.4/repo/oss/
+repo-debug-non-oss          | Debug Repository (Non-OSS)              | No      | ----      | ----    | http://download.opensuse.org/debug/distribution/leap/15.4/repo/non-oss/
+repo-debug-update           | Update Repository (Debug)               | No      | ----      | ----    | http://download.opensuse.org/debug/update/leap/15.4/oss/
+repo-debug-update-non-oss   | Update Repository (Debug, Non-OSS)      | No      | ----      | ----    | http://download.opensuse.org/debug/update/leap/15.4/non-oss/
+repo-non-oss                | Non-OSS Repository                      | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/distribution/leap/15.4/repo/non-oss/
+repo-oss                    | openSUSE-Leap                           | Yes     | ( p) Yes  | Yes     | http://download.opensuse.org/distribution/leap/15.4/repo/oss/
+repo-sle-debug-update       | Update repository with debuginfo for -> | No      | ----      | ----    | http://download.opensuse.org/debug/update/leap/15.4/sle/
+repo-sle-update             | Update repository with updates from S-> | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/update/leap/15.4/sle/
+repo-source                 | Source Repository                       | No      | ----      | ----    | http://download.opensuse.org/source/distribution/leap/15.4/repo/oss/
+repo-update                 | Main Update Repository                  | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/update/leap/15.4/oss
+repo-update-non-oss         | Update Repository (Non-Oss)             | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/update/leap/15.4/non-oss/
