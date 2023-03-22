@@ -1,0 +1,90 @@
+# vim:set filetype=sh:
+# See the Config File Glossary for instructions.
+# https://docs.teleirc.com/en/latest/user/config-file-glossary/
+
+###############################################################################
+#                                                                             #
+#                       IRC configuration settings                            #
+#                                                                             #
+###############################################################################
+
+#####----- Host connection settings -----#####
+IRC_HOST_IP=""
+
+
+#####----- IRC server connection settings -----#####
+IRC_SERVER=irc.libera.chat
+IRC_SERVER_PASSWORD=""
+IRC_PORT=6697
+
+## Encryption (SSL/TLS) options
+IRC_USE_SSL=true
+IRC_CERT_ALLOW_EXPIRED=false
+IRC_CERT_ALLOW_SELFSIGNED=false
+
+
+#####----- IRC channel settings -----#####
+IRC_CHANNEL="#fsf.hu"
+IRC_CHANNEL_KEY=""
+IRC_BLACKLIST=""
+
+
+#####----- IRC bot settings -----#####
+IRC_BOT_NAME=lohu_bot
+IRC_BOT_REALNAME="Powered by TeleIRC <github.com/RITlug/teleirc>"
+IRC_BOT_IDENT="teleirc"
+
+# NickServ options
+IRC_NICKSERV_SERVICE=NickServ
+IRC_NICKSERV_USER=""
+IRC_NICKSERV_PASS=""
+
+
+#####----- IRC message settings -----#####
+IRC_PREFIX="<"
+IRC_SUFFIX=">"
+IRC_SEND_STICKER_EMOJI=true
+IRC_SEND_DOCUMENT=false
+IRC_EDITED_PREFIX="(edited) "
+IRC_MAX_MESSAGE_LENGTH=400
+IRC_SHOW_ZWSP=true
+IRC_SHOW_LOCATION_MESSAGE=false
+IRC_NO_FORWARD_PREFIX=""
+IRC_QUIT_MESSAGE="TeleIRC bridge stopped."
+
+
+
+###############################################################################
+#                                                                             #
+#                     Telegram configuration settings                         #
+#                                                                             #
+###############################################################################
+
+TELEGRAM_CHAT_ID=-1001288323813
+# cpm search -q -m telegram.org -u lofficehu_bot
+TELEIRC_TOKEN=FIXME
+MAX_MESSAGES_PER_MINUTE=20
+TELEGRAM_MESSAGE_REPLY_PREFIX="["
+TELEGRAM_MESSAGE_REPLY_SUFFIX="]"
+TELEGRAM_MESSAGE_REPLY_LENGTH=15
+SHOW_TOPIC_MESSAGE=true
+SHOW_ACTION_MESSAGE=true
+SHOW_JOIN_MESSAGE=false
+JOIN_MESSAGE_ALLOW_LIST=""
+SHOW_KICK_MESSAGE=true
+SHOW_NICK_MESSAGE=false
+SHOW_LEAVE_MESSAGE=false
+LEAVE_MESSAGE_ALLOW_LIST=""
+SHOW_DISCONNECT_MESSAGE=true
+
+
+################################################################################
+#                                                                             #
+#                      Imgur configuration settings                           #
+#                                                                             #
+###############################################################################
+
+IMGUR_CLIENT_ID=7d6b00b87043f58
+IMGUR_CLIENT_SECRET=""
+IMGUR_REFRESH_TOKEN=""
+IMGUR_ALBUM_HASH=""
