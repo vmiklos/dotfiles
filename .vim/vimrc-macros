@@ -32,7 +32,7 @@ let g:localvimrc_whitelist=['/home/vmiklos/git/vmexam/']
 " select a line/lines with 'V', then :OpenGithubFile
 " ~/.vim/pack/plugins/start/
 " git clone https://github.com/tyru/open-browser.vim
-" git clone https://github.com/tyru/open-browser-github.vim (or git@github.com:vmiklos/open-browser-github.vim)
+" git clone git@github.com:vmiklos/open-browser-github.vim
 let g:openbrowser_github_always_use_upstream_commit_hash = 1
 
 " :help leader
