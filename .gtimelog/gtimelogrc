@@ -1,6 +1,6 @@
 [gtimelog]
 editor = xdg-open
-task_list_url = https://chronophage.collabora.com/tasks
-# report_to_url = https://test.chronophage.collabora.com/timesheet
-report_to_url = https://chronophage.collabora.com/timesheet
+task_list_url = https://chronophage.collabora.com/rest-api/proxy/tasks
+report_to_url = https://chronophage.collabora.com/rest-api/proxy/timesheet
+auth_header = Token ...
 server_cert = /etc/ssl/ca-bundle.pem
