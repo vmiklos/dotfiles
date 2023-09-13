@@ -52,6 +52,9 @@ alias 2fa="cpm --totp"
 # Formats the last commit in the workdir (has to be still committed with commit --amend).
 alias git-clang-format-diff="git diff -U0 --no-color HEAD^ | clang-format-diff -p1 -i"
 
+# <https://stackoverflow.com/questions/39017391/how-to-make-midnight-commander-exit-to-its-current-directory>
+alias mc='source /usr/share/mc/mc-wrapper.sh'
+
 export PATH=$HOME/.local/bin:$PATH
 
 # rusty-tags, etc.
