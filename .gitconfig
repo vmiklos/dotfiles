@@ -10,7 +10,7 @@
 	lg = log --pretty=fuller
 	# %cd is _committer_ date
 	myonelinerlog = log --author=vmiklos --date=short --pretty=format:'%H %cd %s'
-	showref = show -s --date=short --pretty='format:%H (%s, %ad)'
+	showref = show -s --date=short --pretty='format:%H (%s, %cd)'
 [review "review.cyanogenmod.org"]
 	username = vmiklos
 [http]
