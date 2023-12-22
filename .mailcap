@@ -12,6 +12,6 @@ application/msword; soffice %s
 # docx
 application/vnd.openxmlformats-officedocument.wordprocessingml.document; soffice %s
 image/*; geeqie %s
-# ical, using <https://github.com/terabyte/mutt-filters>
-text/calendar; vcalendar-filter; copiousoutput
-application/ics; vcalendar-filter; copiousoutput
+# ical
+text/calendar; ics2txt %s; copiousoutput
+application/ics; ics2txt %s; copiousoutput
