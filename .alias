@@ -6,7 +6,7 @@ alias wilson='ssh -4 -C wilson -t "source ~/.bash_login; screen -DR"'
 alias gqview="geeqie"
 alias killallssh="killall ssh; killall mutt"
 alias iotop="sudo iotop -P -d 3"
-alias lotail="cd ~/git/libreoffice/master; tail -f log"
+alias lotail="cd ~/git/libreoffice/core; tail -f log"
 
 units()
 {
