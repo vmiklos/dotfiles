@@ -84,7 +84,7 @@ augroup Cpp
     " git clone https://github.com/Valloric/YouCompleteMe.git
     " cd YouCompleteMe
     " git submodule update --init --recursive
-    " CC=gcc-12 CXX=g++-12 python3.11 ./install.py --clangd-completer --rust-completer --go-completer --ts-completer
+    " CC=gcc-12 CXX=g++-12 python3.11 ./install.py --clangd-completer --rust-completer --rust-toolchain-version 1.76 --go-completer --ts-completer
     " # --java-completer
     " # --cs-completer
     "
