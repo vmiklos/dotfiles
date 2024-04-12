@@ -118,6 +118,7 @@ augroup Cpp
     autocmd FileType cpp nnoremap <silent><leader>cc :YcmCompleter GetDoc<cr>
     autocmd FileType cpp nnoremap <silent><leader>cd :YcmCompleter GoToDeclaration<cr>
     autocmd FileType rust nnoremap <silent><leader>cd :YcmCompleter GoToDefinition<cr>
+    autocmd FileType javascript nnoremap <silent><leader>cd :YcmCompleter GoToDeclaration<cr>
     autocmd FileType typescript nnoremap <silent><leader>cd :YcmCompleter GoToDefinition<cr>
     autocmd FileType python nnoremap <silent><leader>cd :YcmCompleter GoTo<cr>
     autocmd FileType go nnoremap <silent><leader>cd :YcmCompleter GoTo<cr>
