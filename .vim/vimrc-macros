@@ -28,6 +28,7 @@ let g:localvimrc_whitelist=['/home/vmiklos/git/vmexam/']
 
 " git clone https://github.com/udalov/kotlin-vim.git ~/.vim/pack/plugins/start/kotlin-vim
 " git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/pack/typescript/start/typescript-vim
+" git clone https://github.com/prettier/vim-prettier; cd vim-prettier; git checkout 1.0.0; npm install
 
 " select a line/lines with 'V', then :OpenGithubFile
 " ~/.vim/pack/plugins/start/
@@ -132,7 +133,7 @@ augroup Cpp
     autocmd FileType rust nnoremap <silent><leader>cx :YcmCompleter FixIt<cr>
     autocmd FileType cpp vnoremap <silent><leader>gq :py3f $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType objc vnoremap <silent><leader>gq :py3f $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
-    autocmd FileType javascript vnoremap <silent><leader>gq :py3f $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
+    autocmd FileType javascript vnoremap <silent><leader>gq :PrettierPartial<cr>
     autocmd FileType java vnoremap <silent><leader>gq :py3f $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType go nnoremap <silent><leader>gq :% !goimports<CR>
     " rustfmt range formatting is unstable at the moment
