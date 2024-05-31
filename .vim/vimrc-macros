@@ -134,6 +134,7 @@ augroup Cpp
     autocmd FileType cpp vnoremap <silent><leader>gq :py3f $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType objc vnoremap <silent><leader>gq :py3f $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType javascript vnoremap <silent><leader>gq :PrettierPartial<cr>
+    autocmd FileType typescript vnoremap <silent><leader>gq :PrettierPartial<cr>
     autocmd FileType java vnoremap <silent><leader>gq :py3f $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType go nnoremap <silent><leader>gq :% !goimports<CR>
     " rustfmt range formatting is unstable at the moment
