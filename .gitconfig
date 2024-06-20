@@ -7,9 +7,7 @@
 	default = current
 [alias]
 	mylog = log --author='Miklos Vajna'
-	lg = log --pretty=fuller
 	# %cd is _committer_ date
-	myonelinerlog = log --author=vmiklos --date=short --pretty=format:'%H %cd %s'
 	showref = show -s --date=short --pretty='format:%H (%s, %cd)'
 [review "review.cyanogenmod.org"]
 	username = vmiklos
@@ -29,3 +27,5 @@
 	singleKey = true
 [advice]
 	skippedCherryPicks = false
+[format]
+	pretty = fuller
