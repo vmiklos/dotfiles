@@ -9,16 +9,8 @@
 	mylog = log --author='Miklos Vajna'
 	# %cd is _committer_ date
 	showref = show -s --date=short --pretty='format:%H (%s, %cd)'
-[review "review.cyanogenmod.org"]
-	username = vmiklos
 [http]
 	cookiefile = /home/vmiklos/.gitcookies
-[transfer]
-	#fsckobjects = true
-[fetch]
-	#fsckobjects = true
-[receive]
-	#fsckObjects = true
 [gc]
 	autoDetach = false
 [fetch]
