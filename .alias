@@ -1,12 +1,9 @@
-# socks proxy: -D 9090 + 2>/dev/null
-# reverse proxy: -R 19023:localhost:22
 alias plug='ssh -4 -C plug -t "source ~/.bash_login; screen -DR"'
 alias wilson='ssh -4 -C wilson -t "source ~/.bash_login; screen -DR"'
 
-alias gqview="geeqie"
-alias killallssh="killall ssh; killall mutt"
 alias iotop="sudo iotop -P -d 3"
 alias lotail="cd ~/git/libreoffice/core; tail -f log"
+alias cool-gdb='gdb -iex "set sysroot /"'
 
 units()
 {
