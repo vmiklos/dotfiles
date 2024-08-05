@@ -3,7 +3,7 @@
 echo "creating .mutt/accounts/10gmail.conf"
 m4 -DPASSWORD="$(cpm -q -m accounts.google.com -u $USER-mail-$HOSTNAME)" .mutt/accounts/10gmail.conf.m4 > .mutt/accounts/10gmail.conf
 echo "creating .mutt/accounts/15collabora.conf"
-m4 -DCPPASSWORD="$(cpm -q -m collabora.com -s ldap)" .mutt/accounts/15collabora.conf.m4 > .mutt/accounts/15collabora.conf
+m4 -DCPPASSWORD="$(cpm -q -m accounts.zoho.com)" .mutt/accounts/15collabora.conf.m4 > .mutt/accounts/15collabora.conf
 echo "creating .mutt/accounts/30tdf.conf"
 m4 -DPASSWORD="$(cpm -q -m mail.documentfoundation.org)" .mutt/accounts/30tdf.conf.m4 > .mutt/accounts/30tdf.conf
 echo "creating .msmtprc"

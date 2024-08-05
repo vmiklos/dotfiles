@@ -1,16 +1,16 @@
 changequote(<!,!>)
-mailboxes `mutt-imap-lister mail.collabora.com vmiklos CPPASSWORD`
-account-hook imaps://mail.collabora.com/ 'set imap_user=vmiklos imap_pass=CPPASSWORD'
-folder-hook imaps://mail.collabora.com/ "\
-	set smtp_url=\"smtp://vmiklos:CPPASSWORD@mail.collabora.com:587\"; \
+mailboxes `mutt-imap-lister imappro.zoho.com miklos.vajna@collabora.com CPPASSWORD`
+account-hook imaps://imappro.zoho.com/ 'set imap_user=miklos.vajna@collabora.com imap_pass=CPPASSWORD'
+folder-hook imaps://imappro.zoho.com/ "\
+	set smtp_url=\"smtps://miklos.vajna@collabora.com:CPPASSWORD@smtppro.zoho.com:465\"; \
 	set smtp_pass=\"PASSWORD\"; \
 	set hostname=\"collabora.com\"; \
 	unset signature; \
 	unset imap_authenticators; \
 	unset imap_oauth_refresh_command; \
-	set folder=imaps://mail.collabora.com/; \
-	set record=imaps://mail.collabora.com/Sent; \
-	set postponed=imaps://mail.collabora.com/Unsent; \
+	set folder=imaps://imappro.zoho.com/; \
+	set record=imaps://imappro.zoho.com/Sent; \
+	set postponed=imaps://imappro.zoho.com/Unsent; \
 	set from=\"Miklos Vajna <vmiklos@collabora.com>\"; \
 	unset crypt_autosign; \
 	bind index r reply; \
@@ -20,6 +20,6 @@ folder-hook imaps://mail.collabora.com/ "\
 	set attribution=\"On %d, %f wrote:\" \
 "
 
-folder-hook imaps://mail.collabora.com/INBOX.?$ 'set record=+INBOX'
+folder-hook imaps://imappro.zoho.com/INBOX.?$ 'set record=+INBOX'
 
 # vim: ft=muttrc
