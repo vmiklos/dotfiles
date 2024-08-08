@@ -10,7 +10,7 @@ folder-hook imaps://imappro.zoho.com/ "\
 	unset imap_oauth_refresh_command; \
 	set folder=imaps://imappro.zoho.com/; \
 	set record=imaps://imappro.zoho.com/Sent; \
-	set postponed=imaps://imappro.zoho.com/Unsent; \
+	set postponed=imaps://imappro.zoho.com/Drafts; \
 	set from=\"Miklos Vajna <vmiklos@collabora.com>\"; \
 	unset crypt_autosign; \
 	bind index r reply; \
