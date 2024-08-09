@@ -1,10 +1,11 @@
 changequote(<!,!>)
 IMAPAccount      collabora
-Host             mail.collabora.com
-User             vmiklos
+Host             imappro.zoho.com
+User             miklos.vajna@collabora.com
 Pass             PASSWORD
 # See <https://people.kernel.org/mcgrof/replacing-offlineimap-with-mbsync>, don't go over the quota.
-PipelineDepth 1
+PipelineDepth 2
+AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile  /var/lib/ca-certificates/ca-bundle.pem
 
@@ -20,7 +21,7 @@ Subfolders Verbatim
 Channel   collabora
 Far    :collabora-cloud:
 Near     :collabora-backup:
-Create    Slave
-Expunge   Slave
+Create    Near
+Expunge   Near
 Sync      Pull
 Patterns  *

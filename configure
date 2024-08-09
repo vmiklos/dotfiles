@@ -15,5 +15,5 @@ m4 -DNOVELLEXTERNALPASSWORD="$(cpm -q -m externalacc.novell.com)" .oscrc.m4 > .o
 echo "creating .mbsyncrc"
 m4 -DPASSWORD="$(cpm -q -m accounts.google.com -u $USER-mail-$HOSTNAME)" .mbsyncrc.m4 > .mbsyncrc
 echo "creating .mbsyncrc-ccu"
-m4 -DPASSWORD="$(cpm -q -m collabora.com -s ldap)" .mbsyncrc-ccu.m4 > .mbsyncrc-ccu
+m4 -DPASSWORD="$(cpm -q -m accounts.zoho.com)" .mbsyncrc-ccu.m4 > .mbsyncrc-ccu
 cat .config/geeqie/geeqierc.xml.in > .config/geeqie/geeqierc.xml
