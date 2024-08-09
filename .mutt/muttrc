@@ -180,3 +180,4 @@ macro index <F9> \
       "notmuch: reconstruct thread"
 
 set abort_noattach=ask-yes
+set smtp_authenticators = 'gssapi:login'
