@@ -116,8 +116,8 @@ augroup Cpp
     " - Never insert includes automatically.
     let g:ycm_clangd_args = ["-background-index=false", "--clang-tidy=false", "--header-insertion=never"]
     " YCM key bindings
-    autocmd FileType cpp nnoremap <silent><leader>cc :YcmCompleter GetDoc<cr>
     autocmd FileType cpp nnoremap <silent><leader>cd :YcmCompleter GoToDeclaration<cr>
+    autocmd FileType c nnoremap <silent><leader>cd :YcmCompleter GoToDeclaration<cr>
     autocmd FileType rust nnoremap <silent><leader>cd :YcmCompleter GoToDefinition<cr>
     autocmd FileType javascript nnoremap <silent><leader>cd :YcmCompleter GoToDeclaration<cr>
     autocmd FileType typescript nnoremap <silent><leader>cd :YcmCompleter GoToDefinition<cr>
