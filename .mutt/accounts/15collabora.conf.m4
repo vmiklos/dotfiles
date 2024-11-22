@@ -5,7 +5,7 @@ folder-hook imaps://imappro.zoho.com/ "\
 	set smtp_url=\"smtps://miklos.vajna@collabora.com:CPPASSWORD@smtppro.zoho.com:465\"; \
 	set smtp_pass=\"PASSWORD\"; \
 	set hostname=\"collabora.com\"; \
-	unset signature; \
+	set signature=\"~/.mutt/signature-ccu\"; \
 	unset imap_authenticators; \
 	unset imap_oauth_refresh_command; \
 	set folder=imaps://imappro.zoho.com/; \
