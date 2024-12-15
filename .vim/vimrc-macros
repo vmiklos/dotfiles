@@ -85,13 +85,13 @@ augroup Cpp
     " git clone https://github.com/Valloric/YouCompleteMe.git
     " cd YouCompleteMe
     " git submodule update --init --recursive
-    " CC=gcc-12 CXX=g++-12 python3.11 ./install.py --clangd-completer --rust-completer --rust-toolchain-version 1.76 --go-completer --ts-completer
+    " CC=gcc-12 CXX=g++-12 python3.11 ./install.py --clangd-completer --rust-completer --go-completer --ts-completer
     " # --java-completer
     " # --cs-completer
     "
     " YCM update:
-    " git checkout 4f1dcf4f971517b5a41d420b3671259f917e3827 # 2023-08-19
-    " (cd third_party/ycmd; git checkout 7d5ef4c7edb66d252d69c0b6be696a6ceb915f84) # 2023-08-19
+    " # commit f56c0cb8158ee4d09dd87feff75958a12e19d992 (Merge pull request #4280 from ycm-core/update-ycmd, 2024-12-12)
+    " git pull -r
     " git submodule update --recursive
     "
     " YCM options
