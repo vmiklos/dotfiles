@@ -130,6 +130,7 @@ augroup Cpp
     autocmd FileType typescript nnoremap <silent><leader>ct :YcmCompleter GetType<cr>
     " :ccl closes the quickfix window.
     autocmd FileType cpp nnoremap <silent><leader>cx :YcmCompleter FixIt<cr>
+    autocmd FileType cpp nnoremap <silent><leader>cr :py3f $HOME/git/llvm/clang/tools/clang-rename/clang-rename.py<cr>
     autocmd FileType rust nnoremap <silent><leader>cx :YcmCompleter FixIt<cr>
     autocmd FileType cpp vnoremap <silent><leader>gq :py3f $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
     autocmd FileType objc vnoremap <silent><leader>gq :py3f $HOME/git/llvm/clang/tools/clang-format/clang-format.py<cr>
