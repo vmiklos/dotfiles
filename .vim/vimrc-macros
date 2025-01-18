@@ -156,11 +156,6 @@ augroup GitCommit
     autocmd Filetype gitcommit set tw=72
 augroup END
 
-augroup Ly
-    autocmd!
-    autocmd BufNewFile,BufReadPost,BufEnter *.ly so /usr/share/lilypond/2.12.1/vim/syntax/lilypond.vim
-augroup END
-
 augroup Swig
     autocmd!
     autocmd BufRead */swig*/* set tabstop=8 | set shiftwidth=2 | set softtabstop=2 | set expandtab " SWIG
