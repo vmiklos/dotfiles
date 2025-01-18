@@ -5,9 +5,8 @@ User             vmiklos@vmiklos.hu
 Pass             PASSWORD
 # See <https://people.kernel.org/mcgrof/replacing-offlineimap-with-mbsync>, don't go over gmail's
 # quota.
-PipelineDepth 1
+PipelineDepth 2
 SSLType IMAPS
-SSLVersions TLSv1.1
 CertificateFile  /var/lib/ca-certificates/ca-bundle.pem
 
 IMAPStore  gmail-cloud
