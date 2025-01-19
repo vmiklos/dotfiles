@@ -24,4 +24,4 @@ Create    Slave
 Expunge   Slave
 Sync      Pull
 # Exclude everything under the internal [Gmail] folder, except archived mails
-Patterns  * ![Gmail]* "[Gmail]/All Mail"
+Patterns  * ![Gmail]*
