@@ -1,17 +1,22 @@
 #!/bin/bash
 
+function mygpp()
+{
+    gpp -U "@" "@" "(" "," ")" "(" ")" "#" "" -M "#" "\n" " " " " "\n" "(" ")" "$@"
+}
+
 echo "creating .mutt/accounts/10gmail.conf"
-m4 -DPASSWORD="$(cpm -q -m accounts.google.com -u $USER-mail-$HOSTNAME)" .mutt/accounts/10gmail.conf.m4 > .mutt/accounts/10gmail.conf
+mygpp -DPASSWORD="$(cpm -q -m accounts.google.com -u $USER-mail-$HOSTNAME)" .mutt/accounts/10gmail.conf.in > .mutt/accounts/10gmail.conf
 echo "creating .mutt/accounts/15collabora.conf"
-m4 -DCPPASSWORD="$(cpm -q -m accounts.zoho.com)" .mutt/accounts/15collabora.conf.m4 > .mutt/accounts/15collabora.conf
+mygpp -DCPPASSWORD="$(cpm -q -m accounts.zoho.com)" .mutt/accounts/15collabora.conf.in > .mutt/accounts/15collabora.conf
 echo "creating .msmtprc"
-m4 -DPASSWORD="$(cpm -q -m collabora.com -s ldap)" .msmtprc.m4 > .msmtprc
+mygpp -DPASSWORD="$(cpm -q -m collabora.com -s ldap)" .msmtprc.in > .msmtprc
 echo "creating .linphonerc"
-m4 -DVOIPSUSEDEPASSWORD="$(cpm -q -m voip.suse.de)" .linphonerc.m4 > .linphonerc
+mygpp -DVOIPSUSEDEPASSWORD="$(cpm -q -m voip.suse.de)" .linphonerc.in > .linphonerc
 echo "creating .oscrc"
-m4 -DNOVELLEXTERNALPASSWORD="$(cpm -q -m externalacc.novell.com)" .oscrc.m4 > .oscrc
+mygpp -DNOVELLEXTERNALPASSWORD="$(cpm -q -m externalacc.novell.com)" .oscrc.in > .oscrc
 echo "creating .mbsyncrc"
-m4 -DPASSWORD="$(cpm -q -m accounts.google.com -u $USER-mail-$HOSTNAME)" .mbsyncrc.m4 > .mbsyncrc
+mygpp -DPASSWORD="$(cpm -q -m accounts.google.com -u $USER-mail-$HOSTNAME)" .mbsyncrc.in > .mbsyncrc
 echo "creating .mbsyncrc-ccu"
-m4 -DPASSWORD="$(cpm -q -m accounts.zoho.com)" .mbsyncrc-ccu.m4 > .mbsyncrc-ccu
+mygpp -DPASSWORD="$(cpm -q -m accounts.zoho.com)" .mbsyncrc-ccu.in > .mbsyncrc-ccu
 cat .config/geeqie/geeqierc.xml.in > .config/geeqie/geeqierc.xml

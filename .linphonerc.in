@@ -95,7 +95,7 @@ subscribe=1
 [auth_info_0]
 username=vmiklos
 userid=vmiklos
-passwd=VOIPSUSEDEPASSWORD
+passwd=@VOIPSUSEDEPASSWORD@
 realm="voip.suse.de"
 
 [proxy_0]

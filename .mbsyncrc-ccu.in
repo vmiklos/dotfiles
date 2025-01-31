@@ -1,8 +1,7 @@
-changequote(<!,!>)
 IMAPAccount      collabora
 Host             imappro.zoho.com
 User             miklos.vajna@collabora.com
-Pass             PASSWORD
+Pass             @PASSWORD@
 # See <https://people.kernel.org/mcgrof/replacing-offlineimap-with-mbsync>, don't go over the quota.
 PipelineDepth 2
 AuthMechs LOGIN
