@@ -17,10 +17,10 @@ Inbox         ~/mentes/2012-08-27-email/vmiklos-gmail/Inbox
 Subfolders Verbatim
 
 Channel   gmail
-Master    :gmail-cloud:
-Slave     :gmail-backup:
-Create    Slave
-Expunge   Slave
+Far       :gmail-cloud:
+Near      :gmail-backup:
+Create    Near
+Expunge   Near
 Sync      Pull
 # Exclude everything under the internal [Gmail] folder, except archived mails
 Patterns  * ![Gmail]*
