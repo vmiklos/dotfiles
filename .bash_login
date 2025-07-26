@@ -28,12 +28,6 @@ alias sudo="PATH=$PATH:/sbin:/usr/sbin sudo"
 alias webcam="mplayer -tv driver=v4l2:device=/dev/video0 tv://"
 alias tv="vlc http://streamer.carnation.hu/mtvonlinem1" # see http://www.eloadas.tv/
 
-dvdrdata() { growisofs -dvd-compat -overburn -Z /dev/dvdrw=$1; eject /dev/dvdrw;}
-# cd writing aliases
-alias cdblank='cdrecord -v gracetime=2 dev=/dev/cdrw blank=fast'
-alias cdrdata='cdrecord -v -dao dev=/dev/cdrw speed=52 gracetime=2 driveropts=burnfree -eject'
-alias cdrwdata='cdrecord -v -dao dev=/dev/cdrw speed=52 gracetime=2 driveropts=burnfree blank=fast -eject'
-
 # don't offer other related manpages instead of showing what was requested
 export MAN_POSIXLY_CORRECT=1
 
@@ -54,6 +48,8 @@ alias git-clang-format-diff="git diff -U0 --no-color HEAD^ | clang-format-diff -
 
 # <https://stackoverflow.com/questions/39017391/how-to-make-midnight-commander-exit-to-its-current-directory>
 alias mc='source /usr/share/mc/mc-wrapper.sh'
+
+alias cool-gdb='gdb -iex "set sysroot /"'
 
 export PATH=$HOME/.local/bin:$PATH
 
