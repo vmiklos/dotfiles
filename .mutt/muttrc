@@ -54,9 +54,6 @@ set hide_limited
 # it's not a big overhead and the kernel.org lists consider setting a
 # followup_to impolite.
 unset followup_to
-# this will ask if you want to reply off-list or to the list, but the
-# default will be to reply to the list only.
-set list_reply=ask-no
 
 set display_filter="mutt-display-filter"
 
