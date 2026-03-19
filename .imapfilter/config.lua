@@ -1,4 +1,4 @@
--- gmail: echo "before:$(date --date="90 days ago" +%Y/%m/%d) label:lists-libreoffice"
+-- gmail: echo "before:$(date --date="90 days ago" +%Y/%m/%d) label:lists-office"
 --        echo "before:$(date --date="90 days ago" +%Y/%m/%d) in:sent"
 
 account = IMAP {
